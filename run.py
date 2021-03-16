@@ -33,6 +33,7 @@ def services():
     return render_template("services.html")
 
 
+# Register Functionality
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -43,8 +44,20 @@ def register():
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("register"))
+            
+        # check if username already exists in db
+        existing_user = mongo.db.users.find_one(
+            {"email": request.form.get("email")})
+
+        if existing_user:
+            flash("Email already exists")
+            return redirect(url_for("register"))
 
         register = {
+            "FirstName": request.form.get("FirstName"),
+            "LastName": request.form.get("LastName"),
+            "address": request.form.get("address"),
+            "email": request.form.get("email"),
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }

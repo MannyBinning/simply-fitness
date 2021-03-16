@@ -8,22 +8,57 @@
             <div class="col-xl-9 mx-auto">
                 <div class="cta-inner text-center rounded">
                     <h2 class="section-heading mb-5 section-heading-lower"> REGISTER </h2>
-        
+                    <!--Form to register-->
                     <form method="POST" action="{{ url_for('register') }}">
+                        <!--Subscriptions-->
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                            <label class="form-check-label" for="inlineRadio1">1</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                            <label class="form-check-label" for="inlineRadio2">2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option2">
+                            <label class="form-check-label" for="inlineRadio2">3</label>
+                        </div>
+                        <!--First Name and Last Name-->
                         <div class="form-group row">
-                            <label for="username" class="col-sm-2 col-form-label">Username</label>
-                            <div class="col-sm-10">
+                            <div class="col">
+                                <input type="text" id="FirstName" name="FirstName" class="form-control" placeholder="First name" required>
+                            </div>
+                            <div class="col">
+                                <input type="text" id="LastName" name="LastName" class="form-control" placeholder="Last name" required>
+                            </div>
+                        </div>
+                        <!--Home Address-->
+                        <div class="form-group row">
+                            <div class="col">
+                                <input type="text" id="address" name="address" class="form-control" placeholder="Home Address" required>
+                            </div>
+                        </div>
+                        <!--Email Adress -->
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <input id="email" name="email" type="email" class="form-control" placeholder="Email" required>
+                            </div>
+                        </div>
+                        <!--Username-->
+                        <div class="form-group row">
+                            <div class="col-sm-12">
                                 <input id="username" name="username" type="text" minlength="5"
-                                    maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" required>
+                                    maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" placeholder="Username" required>
                             </div>
                         </div>
+                        <!--Password-->
                         <div class="form-group row">
-                            <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-                            <div class="col-sm-10">
+                            <div class="col-sm-12">
                                 <input id="password" name="password" type="password" minlength="5"
-                                    maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" required>
+                                    maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" placeholder="Password" required>
                             </div>
                         </div>
+                        <!--Register Button-->
                         <button type="submit" class="btn btn-warning">Register</button>
                     </form>
                 </div>
