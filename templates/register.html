@@ -11,17 +11,40 @@
                     <!--Form to register-->
                     <form method="POST" action="{{ url_for('register') }}">
                         <!--Subscriptions-->
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                            <label class="form-check-label" for="inlineRadio1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                            <label class="form-check-label" for="inlineRadio2">2</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option2">
-                            <label class="form-check-label" for="inlineRadio2">3</label>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm">
+                                    <div class="card" style="width: 18rem;">
+                                        <div class="card-header">
+                                            SUBSCRIPTION
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">£15.99</li>
+                                            <li class="list-group-item">No Joining Fees</li>
+                                            <li class="list-group-item">24 Hour Access to Gym</li>
+                                        </ul>
+                                        </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                    </div>
+                                </div>
+                                <div class="col-sm">
+                                    <div class="card" style="width: 18rem;">
+                                        <div class="card-header">
+                                            SUBSCRIPTION
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">£19.99</li>
+                                            <li class="list-group-item">No Joining Fees</li>
+                                            <li class="list-group-item">Includes Weekly Diet Plans</li>
+                                        </ul>
+                                        </div>
+                                
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    </div>
+                                </div>   
+                            </div>
                         </div>
                         <!--First Name and Last Name-->
                         <div class="form-group row">
