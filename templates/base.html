@@ -25,24 +25,28 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav mx-auto">
-            <li class="nav-item active px-lg-4">
-                <a class="nav-link text-uppercase text-expanded" href="{{ url_for('index') }}">Home
-                <span class="sr-only">(current)</span>
-                </a>
-            </li>
-            <li class="nav-item px-lg-4">
-                <a class="nav-link text-uppercase text-expanded" href="{{ url_for('profile', username=session['user']) }}">Profile</a>
-            </li>
-            <li class="nav-item px-lg-4">
-                <a class="nav-link text-uppercase text-expanded" href="{{ url_for('services') }}">Services</a>
-            </li>
-            <li class="nav-item px-lg-4">
-                <a class="nav-link text-uppercase text-expanded" href="{{ url_for('login') }}">Log In</a>
-            </li>
-            <li class="nav-item px-lg-4">
-                <a class="nav-link text-uppercase text-expanded" href="{{ url_for('register') }}">Register</a>
-            </li>
-            </ul>
+                <li class="nav-item px-lg-4">
+                    <a class="nav-link text-uppercase text-expanded" href="{{ url_for('index') }}">Home </a>
+                </li>
+                <li class="nav-item px-lg-4">
+                    <a class="nav-link text-uppercase text-expanded" href="{{ url_for('services') }}">Services</a>
+                </li>
+                {% if session.user %}
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="{{ url_for('profile', username=session['user']) }}">Profile</a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="{{ url_for('logout') }}">Log Out</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="{{ url_for('login') }}">Log In</a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="{{ url_for('register') }}">Register</a>
+                    </li>
+                {% endif %}
+                </ul>
         </div>
         </div>
     </nav>
