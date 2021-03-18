@@ -1,7 +1,6 @@
-# Description 
+# Description  
 
 # UX
-
 ### **Home Page:**
 
 ### **Services Page:**
@@ -12,22 +11,25 @@
 
 ### **Register Page:**
 
+#  User Stories
+### **Project Goal:**
+
+### **User:**
+
+### **Actions taken to accomplish these goals are:**
+
+# Data Structure
+
 # Wireframe
 - Wireframes were made at the start of the project to create a specific framework for this website. 
 ### **Wireframe Screenshots:**
 
 
-#  Visual Identity
+# Design and Visual Identity
 
 
 # Site Overview
 Following Images are screenshots of the site overview from a desktop: 
-
-
-#  User Stories
-### **User:**
-
-### **Actions taken to accomplish these goals are:**
 
 # Deployment
 
