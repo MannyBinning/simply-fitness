@@ -99,11 +99,20 @@ def login():
 def profile(username):
     # grab the session user's username from db
     username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
+        {"username": session["user"]})
     
     if session["user"]:    
         return render_template("profile.html", username=username)  
+    
+    return redirect(url_for("login"))  
 
+
+@app.route("/get_tasks")
+def get_tasks():
+    FirstName = mongo.db.users.find_one(
+        {"FirstName": session["user"]})["FirstName"]
+    return render_template("profile.html", FirstName=FirstName)
+    
     return redirect(url_for("login"))  
 
 
