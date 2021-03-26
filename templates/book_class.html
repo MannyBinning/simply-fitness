@@ -1,29 +1,46 @@
-{% extends "base.html" %}
+{% extends "base.html"  %}
 {% block content %}
-    
-<section class="page-section cta">
+
+    <section class="page-section cta">
     <div class="container">
         <div class="row">
             <div class="col-xl-9 mx-auto cta-inner">
                 <div class="text-center rounded">
-                    <h2 class="section-heading mb-5 section-heading-lower"> {{ username.username }}'s Profile </h2>
+                    <h2 class="section-heading mb-5 section-heading-lower"> Book Classes </h2>
                 </div>
                 <div id="accordion">
                     <div class="card">
                         <div class="card-header" id="headingOne">
                             <h5 class="mb-0">
                                 <button class="btn " data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Personal Details
+                                Book Classes
                                 </button>
                             </h5>
                         </div>
                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                             <div class="card-body">
-                                Username: {{ username.username.capitalize() }}<br>
-                                Full Name: {{ username.FirstName }} {{ username.LastName }}<br>
-                                Address: {{ username.address }}<br>
-                                Email: {{ username.email }}
-                            </div>
+                        <form method="POST" action="{{ url_for('book_class') }}">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Full Name">
+                    </div>
+                    <div class="form-group">    
+                        <select class="form-control" id="category_name" name="category_name" required>
+                            <option disabled selected>Select a Class</option>
+                            {% for category in categories %}
+                                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="date" id="date" required>
+                        <input type="time" id="time" required>  
+                  </div>
+                        <div class="form-group">
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Further Information"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-secondary">Book</button>
+                    </form>                                
+                </div>
                         </div>
                     </div>
                     <div class="card">
@@ -41,6 +58,7 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>

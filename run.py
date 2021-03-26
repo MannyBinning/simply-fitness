@@ -107,20 +107,25 @@ def profile(username):
     return redirect(url_for("login"))  
 
 
-@app.route("/get_tasks")
-def get_tasks():
-    FirstName = mongo.db.users.find_one(
-        {"FirstName": session["user"]})["FirstName"]
-    return render_template("profile.html", FirstName=FirstName)
-    
-    return redirect(url_for("login"))  
-
-
 @app.route("/logout")
 def logout():
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+@app.route("/book_class", methods=["GET", "POST"])
+def book_class():
+    if request.method == "POST":
+        task = {
+            "category_name": request.form.get("category_name")
+        }
+        mongo.db.tasks.insert_one(task)
+        flash("Booked")
+        return redirect(url_for("book_class"))
+        
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("book_class.html", categories=categories)
 
 
 if __name__ == "__main__":

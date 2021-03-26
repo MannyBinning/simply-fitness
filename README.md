@@ -2,7 +2,7 @@
 - Gym website made for users to find out information about this gym
 - Motivate clients for gym via this website 
 - Register to become member of this gym
-- gym members can access the main profile system to track their classes 
+- gym members can access the main profile system to access detail 
 - gym members details are stored in order to keep all profiles unique  
 
 # UX
@@ -14,6 +14,8 @@
 - provide information on what this gym has to offer such as swimming pool, sauna and spa, bicycle room for classes and main gym section 
 - details are provided in order to attract   
 ### **Profile Page:**
+
+### **Classes Page:**
 
 ### **Log In Page:**
 
