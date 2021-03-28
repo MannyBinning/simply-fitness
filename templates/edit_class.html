@@ -1,0 +1,54 @@
+{% extends "base.html"  %}
+{% block content %}
+
+    <section class="page-section cta">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 mx-auto cta-inner">
+                <div class="text-center rounded">
+                    <h2 class="section-heading mb-5 section-heading-lower"> Edit Classes </h2>
+                </div>
+                <div id="accordion">
+                    <div class="card">
+
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body">
+                        <form method="POST" action="{{ url_for('edit_class', task_id=task._id) }}">
+                    <div class="form-group">
+                        <input value="{{ task.booking_name }}" type="text" class="form-control" id="exampleFormControlInput1" name= "booking_name" placeholder="Full Name">
+                    </div>
+                    <div class="form-group">    
+                        <select class="form-control" id="category_name" name="category_name" required>
+                            <option disabled>Select a Class</option>
+                            {% for category in categories %}
+                                {% if category.category_name == task.category_name %}   
+                                    <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                                {% else %}   
+                                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                                {% endif %}        
+                            {% endfor %}
+
+                        </select>
+                    </div>
+                    <div class="form-group" >
+                        <input value="{{ task.booking_date }}" type="date" id="date" name="booking_date" required>
+                        <input value="{{ task.booking_time }}" type="time" id="time" name="booking_time" required>  
+                  </div>
+                        <div class="form-group">
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Further Information" name="booking_notes">{{ task.booking_notes }}</textarea>
+                        </div>
+                        <a href="{{ url_for('book_class')}}" class="btn btn-warning">Cancel</a>
+                        <button type="submit" class="btn btn-secondary">Save Changes</button>
+                    </form>                                
+                </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+</section>
+
+{% endblock %}

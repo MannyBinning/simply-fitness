@@ -132,9 +132,26 @@ def book_class():
     categories = mongo.db.categories.find().sort("category_name", 1)
     tasks = mongo.db.tasks.find()
     return render_template("book_class.html", categories=categories, tasks=tasks)
-    
 
 
+@app.route("/edit_class/<task_id>", methods=["GET", "POST"])
+def edit_class(task_id):
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name"),
+            "booking_name": request.form.get("booking_name"),
+            "booking_date": request.form.get("booking_date"),
+            "booking_time": request.form.get("booking_time"),
+            "booking_notes": request.form.get("booking_notes"),
+            "created_by": session["user"]
+        }
+        mongo.db.tasks.update({"_id": ObjectId(task_id)}, submit)
+        flash("Changes Saved")
+
+    task = mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    tasks = mongo.db.tasks.find()
+    return render_template("edit_class.html", task=task, categories=categories, tasks=tasks)
 
 
 if __name__ == "__main__":

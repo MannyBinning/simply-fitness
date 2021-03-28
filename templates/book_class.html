@@ -1,6 +1,5 @@
 {% extends "base.html"  %}
 {% block content %}
-{{tasks}}
 
     <section class="page-section cta">
     <div class="container">
@@ -55,16 +54,20 @@
                         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                             <div class="card-body">
                                 {% for task in tasks %}
-                                    <div class="card bg-light mb-3">
-                                        <div class="text-center rounded"> 
-                                            <p>{{ task.category_name }} <br>
-                                                {{ task.booking_name }}<br>
-                                                {{ task.booking_date }} : {{ task.booking_time }}<br>
-                                                {{ task.booking_notes }}</p>
-                                            <button type="button" class="btn btn-warning">Edit Details</button>
-                                            <button type="button" class="btn btn-warning">Delete class</button>
+                                    {% if session.user|lower == task.created_by|lower %}
+                                        <div class="card bg-light mb-3">
+                                            <div class="text-center rounded"> 
+                                                
+                                                <p>{{ task.category_name }} <br>
+                                                    {{ task.booking_name }}<br>
+                                                    {{ task.booking_date }} : {{ task.booking_time }}<br>
+                                                    {{ task.booking_notes }}</p>    
+                                                <a href="{{ url_for('edit_class', task_id=task._id) }}" class="btn btn-warning">Edit Details</a>
+                                                <button type="button" class="btn btn-warning">Delete class</button>
+                                                
+                                            </div>
                                         </div>
-                                    </div>
+                                    {% endif %}
                                 {% endfor %}
                             </div>
                         </div>
