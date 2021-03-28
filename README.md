@@ -1,19 +1,17 @@
 # Description  
-- Gym website made for users to find out information about this gym
-- Motivate clients for gym via this website 
-- Register to become member of this gym
-- gym members can access the main profile system to access detail 
-- gym members details are stored in order to keep all profiles unique  
+- ‘Simple Fitness’ is a fictional gym created for the purpose of this project. The main objective for creating this website is to make the general public aware of key features within the gym whilst motiving clients to better their fitness regime. Additionally, It will allow people to register 
+with the gym thus subsequently become a member with the ‘Simple Fitness’ company. Once becoming a member, users can gain access to their individual profiles which will contain key personal details. This data will be stored in a distinct order to ensure each profile is unique. 
 
 # UX
 ### **Home Page:**
-- reflects main image of the gym with details. 
-- got location at home page for users to get to know where it is located 
+- This is the forefront page for the ‘Simple Fitness’ website. Its purpose is to create awareness of what the ‘Simple Fitnesss’ gym can intel and where it is located. The images placed on this web page are specifically designed to show users a visual representation of what they can expect when visiting the gym.
+
 ### **Services Page:**
-- provide information on what this gym has to offer such as swimming pool, sauna and spa, bicycle room for classes and main gym section 
-- details are provided in order to attract   
+- This page is targeted to provide the general public with knowledgable information on what services Simple Fitness’ has to offer such as, boxing training classes and bootcamp and what extra facilities are included within the gym.
+
 ### **Profile Page:**
-- Personal details including username email address and home address. this page is only visible for the registered users when they log in so only they can view the details themselves keeping privacy. 
+- When becoming a member with ‘Simple Fitness’, each individual will gain access to their own profile. This page will contain each users username, email address and home address. Each profile is only visible for the registered user when they log into their account and is kept private and confidential.
+
 ### **Classes Page:**
 - to book classes and view the ones already booked, this page is only visible to users who are logged in so only registered members can book classes
 ### **Log In Page:**
