@@ -154,6 +154,13 @@ def edit_class(task_id):
     return render_template("edit_class.html", task=task, categories=categories, tasks=tasks)
 
 
+@app.route("/delete_class/<task_id>")
+def delete_class(task_id):
+    mongo.db.tasks.remove({"_id": ObjectId(task_id)})
+    flash("Class Deleted")
+    return redirect(url_for("book_class"))
+
+
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP"),
