@@ -1,5 +1,6 @@
 {% extends "base.html"  %}
 {% block content %}
+{{tasks}}
 
     <section class="page-section cta">
     <div class="container">
@@ -21,7 +22,7 @@
                             <div class="card-body">
                         <form method="POST" action="{{ url_for('book_class') }}">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Full Name">
+                        <input type="text" class="form-control" id="exampleFormControlInput1" name= "booking_name" placeholder="Full Name">
                     </div>
                     <div class="form-group">    
                         <select class="form-control" id="category_name" name="category_name" required>
@@ -31,12 +32,12 @@
                             {% endfor %}
                         </select>
                     </div>
-                    <div class="form-group">
-                        <input type="date" id="date" required>
-                        <input type="time" id="time" required>  
+                    <div class="form-group" >
+                        <input type="date" id="date" name="booking_date" required>
+                        <input type="time" id="time" name="booking_time" required>  
                   </div>
                         <div class="form-group">
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Further Information"></textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Further Information" name="booking_notes"></textarea>
                         </div>
                         <button type="submit" class="btn btn-secondary">Book</button>
                     </form>                                
@@ -53,7 +54,16 @@
                         </div>
                         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                             <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                {% for task in tasks %}
+                                <div class="card bg-light mb-3">
+                                    <div class="text-center rounded">
+                                    <p>{{ task.category_name }} <br>
+                                       {{ task.booking_name }}<br>
+                                       {{ task.booking_date }} : {{ task.booking_time }}<br>
+                                       {{ task.booking_notes }}</p>
+                                    </div>
+                                </div>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
