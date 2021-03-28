@@ -4,8 +4,11 @@
  * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-business-casual/blob/master/LICENSE)
  */
 
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap');
+
+
 body {
-  font-family: 'Lora';
+  font-family: 'Heebo';
   background-image: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../img/bg.jpg");
   background-attachment: fixed;
   background-position: center;
@@ -18,7 +21,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Raleway';
+  font-family: 'Heebo';
 }
 
 p {
@@ -34,7 +37,8 @@ p {
   margin-bottom: 5rem;
   text-transform: uppercase;
   line-height: 1;
-  font-family: 'Raleway';
+  font-family: 'Heebo';
+  font-weight: 700;
 }
 
 .site-heading .site-heading-upper {
@@ -76,7 +80,7 @@ p {
 
 #mainNav {
   background-color: rgba(47, 23, 15, 0.9);
-  font-family: 'Raleway';
+  font-family: 'Heebo';
 }
 
 #mainNav .navbar-brand {
@@ -219,6 +223,10 @@ p {
     width: 50%;
     font-size: 1.1rem;
   }
+}
+
+.nav-item {
+    text-align: center;
 }
 
 .address strong {
