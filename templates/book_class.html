@@ -55,14 +55,16 @@
                         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                             <div class="card-body">
                                 {% for task in tasks %}
-                                <div class="card bg-light mb-3">
-                                    <div class="text-center rounded">
-                                    <p>{{ task.category_name }} <br>
-                                       {{ task.booking_name }}<br>
-                                       {{ task.booking_date }} : {{ task.booking_time }}<br>
-                                       {{ task.booking_notes }}</p>
+                                    <div class="card bg-light mb-3">
+                                        <div class="text-center rounded"> 
+                                            <p>{{ task.category_name }} <br>
+                                                {{ task.booking_name }}<br>
+                                                {{ task.booking_date }} : {{ task.booking_time }}<br>
+                                                {{ task.booking_notes }}</p>
+                                            <button type="button" class="btn btn-warning">Edit Details</button>
+                                            <button type="button" class="btn btn-warning">Delete class</button>
+                                        </div>
                                     </div>
-                                </div>
                                 {% endfor %}
                             </div>
                         </div>
