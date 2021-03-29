@@ -229,6 +229,10 @@ p {
     text-align: center;
 }
 
+.btn {
+    margin-bottom: 2%;
+}
+
 .address strong {
   font-size: 1.2rem;
 }

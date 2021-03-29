@@ -11,27 +11,30 @@
 </head>
 <body>
 <header>
+<!--Main Heading/Title-->
     <h1 class="site-heading text-center text-white d-none d-lg-block">
         <span class="site-heading-lower">Simply Fitness</span>
         <span class="site-heading-upper text-primary mb-3">Health is an investment not an expense</span>
     </h1>
 
-    <!-- Navigation -->
+<!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
         <div class="container">
-        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="{{ url_for('index') }}">Simply Fitness</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item px-lg-4">
-                    <a class="nav-link text-uppercase text-expanded" href="{{ url_for('index') }}">Home </a>
-                </li>
-                <li class="nav-item px-lg-4">
-                    <a class="nav-link text-uppercase text-expanded" href="{{ url_for('services') }}">Services</a>
-                </li>
-                {% if session.user %}
+            <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="{{ url_for('index') }}">Simply Fitness</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+<!--Nav items-->
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="{{ url_for('index') }}">Home </a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="{{ url_for('services') }}">Services</a>
+                    </li>
+<!--Nav items only visible for registered users once logged in-->
+                    {% if session.user %}
                     <li class="nav-item px-lg-4">
                         <a class="nav-link text-uppercase text-expanded" href="{{ url_for('profile', username=session['user']) }}">Profile</a>
                     </li>
@@ -41,7 +44,7 @@
                     <li class="nav-item px-lg-4">
                         <a class="nav-link text-uppercase text-expanded" href="{{ url_for('logout') }}">Log Out</a>
                     </li>
-                {% else %}
+                    {% else %}
                     <li class="nav-item px-lg-4">
                         <a class="nav-link text-uppercase text-expanded" href="{{ url_for('login') }}">Log In</a>
                     </li>
@@ -50,36 +53,37 @@
                     </li>
                 {% endif %}
                 </ul>
-        </div>
+            </div>
         </div>
     </nav>
 </header>
 
+ <!-- flash messages -->
 <section>
-        <!-- flash messages -->
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="alert alert-warning text-center" role="alert">
-                        <h4>{{ message }}</h4>
-                    </div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-warning text-center" role="alert">
+                    <h4>{{ message }}</h4>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
 </section>
-
+<!--Main content -->
 <main class="container">
     {% block content %}
     {% endblock %}
 </main>
 
+<!--Footer Content-->
 <footer class="footer text-faded text-center py-5">
     <div class="container">
       <p class="m-0 small">Copyright &copy; Your Website 2020</p>
     </div>
 </footer>
 
-  <!-- Bootstrap core JavaScript -->
+<!-- Bootstrap core JavaScript -->
     <script>
       // Initialize and add the map
       function initMap() {
@@ -98,8 +102,8 @@
       }
     </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
-<script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
-<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+    <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 </body>
 </html>

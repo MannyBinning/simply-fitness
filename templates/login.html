@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-
+<!--section to log in if user already registered-->
 <section class="page-section cta">
     <div class="container">
         <div class="row">
@@ -24,9 +24,10 @@
                                     maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" placeholder="Password" required>
                             </div>
                         </div>
-                        <!--Register Button-->
+                        <!--Log In Button-->
                         <button type="submit" class="btn btn-warning">Log In</button>
                     </form>
+                    <!--content to guide user to registeration page if not already registered-->
                     <div class="row">
                         <div class="col s12">
                             <p class="center-align">

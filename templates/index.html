@@ -1,44 +1,51 @@
 {% extends "base.html" %}
 {% block content %}
-      <section class="page-section clearfix">
+   
+<!--Section containg main image and gym related content-->
+<section class="page-section clearfix">
     <div class="container">
-      <div class="intro">
-        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{ url_for('static', filename='img/gym.jpg') }}" alt="">
-        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
-          <h2 class="section-heading mb-4">
-            <span class="section-heading-upper">Lets get Healthy</span>
-            <span class="section-heading-lower">Worth Joining</span>
-          </h2>
-          <p class="mb-3">Within our clubs we've developed a brand new type of gym that integrates numerous types of training in a really social, open-plan layout. It’s divided into specialised zones – we have areas for cardio, free weights, weights machines, functional training and more. 
-          </p>
-          <div class="intro-button mx-auto">
-            <a class="btn btn-primary btn-xl" href="{{ url_for('register') }}">Join Now</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="page-section cta">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-9 mx-auto">
-            <div class="cta-inner text-center rounded">
+        <div class="intro">
+            <!--Main Gym Image-->
+            <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{ url_for('static', filename='img/gym.jpg') }}" alt="Main Image">
+            <!--Content Describing Gym-->
+            <div class="intro-text left-0 text-center bg-faded p-5 rounded">
                 <h2 class="section-heading mb-4">
-                    <span class="section-heading-lower">Location</span>
+                    <span class="section-heading-upper">Lets get Healthy</span>
+                    <span class="section-heading-lower">Worth Joining</span>
                 </h2>
-                <div class="container">
-                    <!--The div element for the map -->
-                        <div id="map"></div>
-                        <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
-                        <script
-                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArKid-D56tkCT_mg_3wEfoU-3zNozHg18&callback=initMap&libraries=&v=weekly"
-                        async
-                        ></script>
-                </div>
+                <p class="mb-3">
+                    Within our clubs we've developed a brand new type of gym that integrates numerous types of training in a really social, 
+                    open-plan layout. It’s divided into specialised zones – we have areas for cardio, free weights, weights machines, functional training and more. 
+                </p>
+                <!--Button to lead user onto register page-->
+                <div class="intro-button mx-auto">
+                    <a class="btn btn-primary btn-xl" href="{{ url_for('register') }}">Join Now</a>
                 </div>
             </div>
         </div>
     </div>
-  </section>
+</section>
+
+<!--Section containing a map with location of the gym-->
+<section class="page-section cta">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 mx-auto">
+                <div class="cta-inner text-center rounded">
+                    <h2 class="section-heading mb-4">
+                        <span class="section-heading-lower">Location</span>
+                    </h2>
+                    <div class="container">
+                        <!--The div element for the map -->
+                            <div id="map"></div>
+                            <script
+                                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArKid-D56tkCT_mg_3wEfoU-3zNozHg18&callback=initMap&libraries=&v=weekly" async
+                            ></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 {% endblock %}

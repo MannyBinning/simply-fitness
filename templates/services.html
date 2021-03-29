@@ -1,68 +1,79 @@
 {% extends "base.html" %}
 {% block content %}
-    <!--Cycling description-->
-    <section class="page-section">
-        <div class="container">
+
+<!--Cycling description-->
+<section class="page-section">
+    <div class="container">
         <div class="product-item">
             <div class="product-item-title d-flex">
-            <div class="bg-faded p-5 d-flex ml-auto rounded">
-                <h2 class="section-heading mb-0">
-                <span class="section-heading-upper">The Trip</span>
-                <span class="section-heading-lower">Cycling Classes</span>
-                </h2>
+                <div class="bg-faded p-5 d-flex ml-auto rounded">
+                    <!--Section Heading-->
+                    <h2 class="section-heading mb-0">
+                        <span class="section-heading-upper">The Trip</span>
+                        <span class="section-heading-lower">Cycling Classes</span>
+                    </h2>
+                </div>
             </div>
-            </div>
+            <!--Image to show cycling area-->
             <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{{ url_for('static', filename='img/cycling.jpg') }}" alt="">
+            <!--Description to describe cycling classes-->
             <div class="product-item-description d-flex mr-auto">
-            <div class="bg-faded p-5 rounded">
-                <p class="mb-0">We all know it’s so much easier to stay healthy when you enjoy yourself whilst working out. Updating our routine regularly to keep it fresh and challenging is key, and with so much on offer at our clubs, there’s always something new to try.</p>
-            </div>
+                <div class="bg-faded p-5 rounded">
+                    <p class="mb-0">We all know it’s so much easier to stay healthy when you enjoy yourself whilst working out. Updating our routine regularly to keep it fresh and challenging is key, and with so much on offer at our clubs, there’s always something new to try.</p>
+                </div>
             </div>
         </div>
-        </div>
-    </section>
+    </div>
+</section>
 
-    <!--Gym description-->
-    <section class="page-section">
-        <div class="container">
+<!--Gym description-->
+<section class="page-section">
+    <div class="container">
         <div class="product-item">
             <div class="product-item-title d-flex">
-            <div class="bg-faded p-5 d-flex mr-auto rounded">
-                <h2 class="section-heading mb-0">
-                <span class="section-heading-upper">Push Yourself</span>
-                <span class="section-heading-lower">SIMPLY-FITNESS GYM</span>
-                </h2>
+                <div class="bg-faded p-5 d-flex mr-auto rounded">
+                    <!--Section Heading-->
+                    <h2 class="section-heading mb-0">
+                        <span class="section-heading-upper">Push Yourself</span>
+                        <span class="section-heading-lower">SIMPLY-FITNESS GYM</span>
+                    </h2>
+                </div>
             </div>
-            </div>
+            <!--Image to show Gym area-->
             <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{{ url_for('static', filename='img/gym1.jpg') }}" alt="">
+            <!--Description for gym area-->
             <div class="product-item-description d-flex ml-auto">
-            <div class="bg-faded p-5 rounded">
-                <p class="mb-0">While our health clubs are about much more than just a gym, we know that to many of our members, top class gym facilities form the key element of their in-club experience. With that in mind, we’ve created spacious gyms that combine many types of training within a sociable, open-plan layout.</p>
-            </div>
+                <div class="bg-faded p-5 rounded">
+                    <p class="mb-0">While our health clubs are about much more than just a gym, we know that to many of our members, top class gym facilities form the key element of their in-club experience. With that in mind, we’ve created spacious gyms that combine many types of training within a sociable, open-plan layout.</p>
+                </div>
             </div>
         </div>
-        </div>
-    </section>
+    </div>
+</section>
 
-    <!--Swimming, sauna and spa description-->
-    <section class="page-section">
-        <div class="container">
+<!--Swimming, sauna and spa description-->
+<section class="page-section">
+    <div class="container">
         <div class="product-item">
             <div class="product-item-title d-flex">
-            <div class="bg-faded p-5 d-flex ml-auto rounded">
-                <h2 class="section-heading mb-0">
-                <span class="section-heading-upper">Relax More</span>
-                <span class="section-heading-lower">SWIMMING &amp; SPA </span>
-                </h2>
+                <div class="bg-faded p-5 d-flex ml-auto rounded">
+                    <!--Section Heading-->
+                    <h2 class="section-heading mb-0">
+                        <span class="section-heading-upper">Relax More</span>
+                        <span class="section-heading-lower">SWIMMING &amp; SPA </span>
+                    </h2>
+                </div>
             </div>
-            </div>
+            <!--Image to show Swimming area-->
             <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{{ url_for('static', filename='img/swimming.jpg') }}" alt="">
+            <!--Description for relaxing area-->
             <div class="product-item-description d-flex mr-auto">
-            <div class="bg-faded p-5 rounded">
-                <p class="mb-0">Swimming is one of the most effective (and enjoyable!) ways to exercise your body and improve your fitness. Regular swimming has not only been proven to increase cardiovascular fitness and build muscle, but it will leave you feeling slimmer, stronger, more flexible, and less stressed.</p>
-            </div>
+                <div class="bg-faded p-5 rounded">
+                    <p class="mb-0">Swimming is one of the most effective (and enjoyable!) ways to exercise your body and improve your fitness. Regular swimming has not only been proven to increase cardiovascular fitness and build muscle, but it will leave you feeling slimmer, stronger, more flexible, and less stressed.</p>
+                </div>
             </div>
         </div>
-        </div>
-    </section>
+    </div>
+</section>
+
 {% endblock %}
