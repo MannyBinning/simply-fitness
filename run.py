@@ -51,6 +51,7 @@ def register():
         register = {
             "FirstName": request.form.get("FirstName"),
             "LastName": request.form.get("LastName"),
+            "subscription": request.form.get("subscription"),
             "address": request.form.get("address"),
             "email": request.form.get("email"),
             "username": request.form.get("username").lower(),
