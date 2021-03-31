@@ -110,11 +110,22 @@ def profile(username):
 
 @app.route("/edit_profile/<username_id>", methods=["GET", "POST"])
 def edit_profile(username_id):
-    user = mongo.db.users.find_one({"_id": ObjectId(username_id)})
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})
-    
-    if session["user"]:    
+        if request.method == "POST":
+            
+            update = {
+                "FirstName": request.form.get("FirstName"),
+                "LastName": request.form.get("LastName"),
+                "subscription": request.form.get("subscription"),
+                "address": request.form.get("address"),
+                "email": request.form.get("email"),
+                "username": request.form.get("username").lower(),
+                "password": generate_password_hash(request.form.get("password"))
+            }
+            mongo.db.users.update({"_id": ObjectId(username_id)}, update)
+            flash("Update Successful!")
+        
+        user = mongo.db.users.find_one({"_id": ObjectId(username_id)})
+        username = mongo.db.users.find_one({"username": session["user"]})
         return render_template("edit_profile.html", user=user, username=username)
     
 
@@ -159,6 +170,7 @@ def edit_class(task_id):
         }
         mongo.db.tasks.update({"_id": ObjectId(task_id)}, submit)
         flash("Changes Saved")
+        return redirect(url_for("book_class"))
 
     task = mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)

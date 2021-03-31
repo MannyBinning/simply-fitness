@@ -93,6 +93,40 @@
                             </div>
                         </div>
                         <br>
+                        <div class="form-group row">
+                            <div class="col">
+                                <input type="text" value="{{username.FirstName}}" id="FirstName" name="FirstName" class="form-control" placeholder="First name" required>
+                            </div>
+                            <div class="col">
+                                <input type="text" value="{{username.LastName}}" id="LastName" name="LastName" class="form-control" placeholder="Last name" required>
+                            </div>
+                        </div>
+                        <!--Home Address-->
+                        <div class="form-group row">
+                            <div class="col">
+                                <input type="text" value="{{username.address}}" id="address" name="address" class="form-control" placeholder="Home Address" required>
+                            </div>
+                        </div>
+                        <!--Email Adress -->
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <input id="email" value="{{username.email}}" name="email" type="email" class="form-control" placeholder="Email" required>
+                            </div>
+                        </div>
+                        <!--Username-->
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <input id="username" value="{{username.username}}" name="username" type="text" minlength="5"
+                                    maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" placeholder="Username" required>
+                            </div>
+                        </div>
+                        <!--Password-->
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <input id="password" name="password" type="password" minlength="5"
+                                    maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" placeholder="Password" required>
+                            </div>
+                        </div>
                         <a href="{{ url_for('profile', username=session['user']) }}" class="btn btn-warning">Cancel</a>
                         <button type="submit" class="btn btn-warning">Update Subscription</button>
                 </form>
