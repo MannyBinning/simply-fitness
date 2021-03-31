@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block content %}
+    
+<section class="page-section cta">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 mx-auto">
+                <div class="cta-inner text-center rounded">
+                <!--Username to show when user has logged in-->
+                    <h2 class="section-heading mb-5 section-heading-lower"> Edit Profile </h2>
+                    <!-- Personal Details -->
+                    
+                    <form method="POST" action="{{ url_for('edit_profile', username_id=username._id) }}">
+                        <!--Subscription-->
+                        <div class="container">
+                            <div class="row">
+                                <!-- Bronze Tier -->
+                                <div class="col-lg-4">
+                                    <div class="card mb-5 mb-lg-0">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-muted text-uppercase text-center">Bronze</h5>
+                                            <h6 class="card-price text-center">£14.99/month</h6>
+                                            <hr>
+                                            <ul class="fa-ul">
+                                                <li><span class="fa-li"><i class="fas fa-check"></i></span>24 Hours gym access</li><br>
+                                                <li><span class="fa-li"><i class="fas fa-check"></i></span>Changing rooms access</li><br>
+                                                <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span> Unlimited Classes </li><br>
+                                                <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Swimming Pool access</li><br>
+                                                <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Sauna and Spa access</li><br>
+                                            </ul>
+                                            <div class="form-check form-check-inline">
+                                                {% if username.subscription == "Bronze" %}
+                                                    <input class="form-check-input" type="radio" name="subscription" id="inlineRadio1" value="Bronze" checked>
+                                                {% else %}
+                                                    <input class="form-check-input" type="radio" name="subscription" id="inlineRadio1" value="Bronze">
+                                                {% endif %}
+                                                <label class="form-check-label" for="inlineRadio1">Bronze</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Silver Tier -->
+                                <div class="col-lg-4">
+                                    <div class="card mb-5 mb-lg-0">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-muted text-uppercase text-center">Silver</h5>
+                                            <h6 class="card-price text-center">£20.99/month</h6>
+                                            <hr>
+                                            <ul class="fa-ul">
+                                                <li><span class="fa-li"><i class="fas fa-check"></i></span>24 Hours gym access</li><br>
+                                                <li><span class="fa-li"><i class="fas fa-check"></i></span>Changing rooms access</li><br>
+                                                <li><span class="fa-li"><i class="fas fa-check"></i></span>10 Classes /month</li><br>
+                                                <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Swimming Pool access</li><br>
+                                                <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Sauna and Spa access</li><br>
+                                            </ul>
+                                            <div class="form-check form-check-inline" >
+                                                {% if username.subscription == "Silver" %}
+                                                    <input class="form-check-input" type="radio" name="subscription" id="inlineRadio2" value="Silver" checked>
+                                                {% else %}
+                                                    <input class="form-check-input" type="radio" name="subscription" id="inlineRadio2" value="Silver">
+                                                {% endif %}
+                                                <label class="form-check-label" for="inlineRadio2">Silver</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Gold Tier -->
+                                <div class="col-lg-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-muted text-uppercase text-center">Gold</h5>
+                                            <h6 class="card-price text-center">£29.99/month</h6>
+                                            <hr>
+                                            <ul class="fa-ul">
+                                                <li><span class="fa-li"><i class="fas fa-check"></i></span>24 Hours gym access</li><br>
+                                                <li><span class="fa-li"><i class="fas fa-check"></i></span>Changing rooms access</li><br>
+                                                <li><span class="fa-li"><i class="fas fa-check"></i></span>20 Classes /month</li><br>
+                                                <li><span class="fa-li"><i class="fas fa-check"></i></span>Swimming Pool access</li><br>
+                                                <li><span class="fa-li"><i class="fas fa-check"></i></span>Sauna and Spa access</li><br>
+                                            </ul>
+                                            <div class="form-check form-check-inline">
+                                                {% if username.subscription == "Gold" %}
+                                                    <input class="form-check-input" type="radio" name="subscription" id="inlineRadio3" value="Gold" checked>
+                                                {% else %}
+                                                    <input class="form-check-input" type="radio" name="subscription" id="inlineRadio3" value="Gold">
+                                                {% endif %}
+                                                <label class="form-check-label" for="inlineRadio3">Gold </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <br>
+                        <a href="{{ url_for('profile', username=session['user']) }}" class="btn btn-warning">Cancel</a>
+                        <button type="submit" class="btn btn-warning">Update Subscription</button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>    
+</section>
+
+{% endblock %}

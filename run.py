@@ -105,7 +105,18 @@ def profile(username):
     if session["user"]:    
         return render_template("profile.html", username=username)  
     
-    return redirect(url_for("login"))  
+    return redirect(url_for("login"))
+
+
+@app.route("/edit_profile/<username_id>", methods=["GET", "POST"])
+def edit_profile(username_id):
+    user = mongo.db.users.find_one({"_id": ObjectId(username_id)})
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})
+    
+    if session["user"]:    
+        return render_template("edit_profile.html", user=user, username=username)
+    
 
 
 @app.route("/logout")
