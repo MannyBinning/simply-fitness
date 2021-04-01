@@ -2,6 +2,7 @@ import os
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
+import re
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -18,6 +19,19 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+def check_name(name):
+    # Validates users names.
+    # Allow lowercase and uppercase letters and numbers.
+    return re.match("[a-zA-Z0-9]+$", name)
+
+
+def check_password(password):
+    # Validate users passwords.
+    # Allow lowercase and uppercase letters and numbers,
+    # 5-15 characters in length.
+    return re.match("^[a-zA-Z0-9]{5,15}$", password)
+
+
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -31,7 +45,19 @@ def services():
 # Register Functionality
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    if request.method == "POST":
+    if request.method == "POST":    
+        # check if characters added for username are valid  
+        if request.form.get("username") == "" or not check_name(
+           request.form.get("username").lower()):
+            flash("Username Invalid")
+            return redirect(url_for("register"))
+        
+        # check if characters added for password are valid  
+        if request.form.get("password") == "" or not check_password(
+           request.form.get("password")):
+            flash("Please enter a valid password.")
+            return redirect(url_for("register"))
+        
         # check if username already exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
@@ -39,15 +65,15 @@ def register():
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("register"))
-            
+
         # check if username already exists in db
-        existing_user = mongo.db.users.find_one(
+        existing_email = mongo.db.users.find_one(
             {"email": request.form.get("email")})
 
-        if existing_user:
+        if existing_email:
             flash("Email already exists")
             return redirect(url_for("register"))
-
+        
         register = {
             "FirstName": request.form.get("FirstName"),
             "LastName": request.form.get("LastName"),
