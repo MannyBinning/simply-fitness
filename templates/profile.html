@@ -7,32 +7,40 @@
             <div class="col-xl-9 mx-auto">
                 <div class="cta-inner text-center rounded">
                 <!--Username to show when user has logged in-->
-                    <h2 class="section-heading mb-5 section-heading-lower"> {{ username.username }}'s Profile </h2>
+                    <h2 class="section-heading mb-5 section-heading-lower"> Personal Details </h2>
                     <!-- Personal Details --> 
                     <div class="card">
                         <div class="card-header" id="headingOne">
-                            <h5 class="mb-0">
-                                <button class="btn " data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    Personal Details
-                                </button>
-                            </h5>
-                        </div>
-                        <!--Information about the user -->
-                        <div class="card bg-light mb-3">
                             <div class="text-center rounded">
                                 <p>Username: {{ username.username.capitalize() }}<br>
                                     Full Name: {{ username.FirstName }} {{ username.LastName }}<br>
                                     Address: {{ username.address }}<br>
-                                    Email: {{ username.email }}</p><br>
+                                    Email: {{ username.email }}</p>
                             </div> 
-                            <div>
-                                <h6>SUBSCRIPTION LEVEL</h6>
+                        </div>
+                        <!--Information about the user -->
+                        <div class="card bg-light mb-3">
+                            <div><br>
+                                <h5>SUBSCRIPTION LEVEL</h5>
                                 {% if username.subscription == "Gold" %}
-                                    <p>GOLD </p>
+                                    <div class="col-lg-12 col-md-12 col-12">
+                                    <a href="#" class="d-block mb-4 h-100">
+                                        <img class="img-fluid img-thumbnail subslevel" src="https://static.wixstatic.com/media/0b0a8d_3b72d2f76a4d42fd8590fce49656e9eb~mv2.jpg/v1/fill/w_280,h_279,al_c,lg_1,q_80/0b0a8d_3b72d2f76a4d42fd8590fce49656e9eb~mv2.webp" alt="Gold subscription">
+                                    </a>
+                                    </div>
+                                    
                                 {% elif username.subscription == "Silver" %}
-                                    <p>Silver</p>
-                                {% else %}    
-                                    <p>Bronze</p> 
+                                    <div class="col-lg-12 col-md-12 col-12">
+                                    <a href="#" class="d-block mb-4 h-100">
+                                        <img class="img-fluid img-thumbnail subslevel" src="https://static.wixstatic.com/media/0b0a8d_6720cebb64a3421e99df38c6974adc70~mv2.jpg/v1/fill/w_280,h_279,al_c,lg_1,q_80/0b0a8d_6720cebb64a3421e99df38c6974adc70~mv2.webp" alt="Silver subscription">
+                                    </a>
+                                    </div>
+                                {% else %}
+                                    <div class="col-lg-12 col-md-12 col-12">
+                                        <a href="#" class="d-block mb-4 h-100">
+                                            <img class="img-fluid img-thumbnail subslevel" src="https://static.wixstatic.com/media/0b0a8d_7e36868b1bfc462e86d89aa00edea696~mv2.png/v1/fill/w_279,h_279,al_c,lg_1,q_85/0b0a8d_7e36868b1bfc462e86d89aa00edea696~mv2.webp" alt="Bronze subscription">
+                                        </a>
+                                    </div>    
                                 {% endif %}
                             </div>           
                         </div>

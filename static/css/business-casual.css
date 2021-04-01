@@ -28,6 +28,12 @@ p {
   line-height: 1.75;
 }
 
+
+.subslevel {
+    height: 100px;
+    border-radius: 50%;
+}
+
 .text-faded {
   color: rgba(255, 255, 255, 0.3);
 }
