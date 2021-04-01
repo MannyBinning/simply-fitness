@@ -8,8 +8,7 @@
                 <div class="cta-inner text-center rounded">
                 <!--Username to show when user has logged in-->
                     <h2 class="section-heading mb-5 section-heading-lower"> {{ username.username }}'s Profile </h2>
-                    <!-- Personal Details -->
-                    
+                    <!-- Personal Details --> 
                     <div class="card">
                         <div class="card-header" id="headingOne">
                             <h5 class="mb-0">
@@ -23,10 +22,19 @@
                             <div class="text-center rounded">
                                 <p>Username: {{ username.username.capitalize() }}<br>
                                     Full Name: {{ username.FirstName }} {{ username.LastName }}<br>
-                                    Subscription: {{username.subscription}}<br>
                                     Address: {{ username.address }}<br>
-                                    Email: {{ username.email }}</p>
-                            </div>                  
+                                    Email: {{ username.email }}</p><br>
+                            </div> 
+                            <div>
+                                <h6>SUBSCRIPTION LEVEL</h6>
+                                {% if username.subscription == "Gold" %}
+                                    <p>GOLD </p>
+                                {% elif username.subscription == "Silver" %}
+                                    <p>Silver</p>
+                                {% else %}    
+                                    <p>Bronze</p> 
+                                {% endif %}
+                            </div>           
                         </div>
                         <!--Button to edit booking details-->
                         <a href="{{ url_for('edit_profile', username_id=username._id) }}" class="btn btn-warning">Update Details</a>
