@@ -162,13 +162,12 @@ def edit_profile(username_id):
                     flash("Incorrect Username/Password, Update not complete")
             
             else:
-                #invalid username
+                # invalid username
                 flash("Incorrect Username/Password, Update not complete")
 
         user = mongo.db.users.find_one({"_id": ObjectId(username_id)})
         username = mongo.db.users.find_one({"username": session["user"]})
         return render_template("edit_profile.html", user=user, username=username)
-    
 
 
 @app.route("/logout")
