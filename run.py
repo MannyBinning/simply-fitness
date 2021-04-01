@@ -137,19 +137,28 @@ def profile(username):
 @app.route("/edit_profile/<username_id>", methods=["GET", "POST"])
 def edit_profile(username_id):
         if request.method == "POST":
-            
-            update = {
-                "FirstName": request.form.get("FirstName"),
-                "LastName": request.form.get("LastName"),
-                "subscription": request.form.get("subscription"),
-                "address": request.form.get("address"),
-                "email": request.form.get("email"),
-                "username": request.form.get("username").lower(),
-                "password": generate_password_hash(request.form.get("password"))
-            }
-            mongo.db.users.update({"_id": ObjectId(username_id)}, update)
-            flash("Update Successful!")
-        
+            existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+            if check_password_hash(
+                existing_user["password"], request.form.get("password")):
+
+                    update = {
+                        "FirstName": request.form.get("FirstName"),
+                        "LastName": request.form.get("LastName"),
+                        "subscription": request.form.get("subscription"),
+                        "address": request.form.get("address"),
+                        "email": request.form.get("email"),
+                        "username": request.form.get("username").lower(),
+                        "password": generate_password_hash(request.form.get("password"))
+                    }
+                    mongo.db.users.update({"_id": ObjectId(username_id)}, update)
+                    flash("Update Successful!")
+
+            else:
+                # invalid password match
+                flash("Incorrect Password, Update not complete")
+
         user = mongo.db.users.find_one({"_id": ObjectId(username_id)})
         username = mongo.db.users.find_one({"username": session["user"]})
         return render_template("edit_profile.html", user=user, username=username)
