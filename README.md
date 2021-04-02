@@ -4,8 +4,10 @@ Additionally, It will allow people to register with the gym thus subsequently be
 This data will be stored in a distinct order to ensure each profile is unique. 
 
 <p align="center">
-  <img src="static/img/Responsive.png" alt="Home-Page wireframe" width="600"/>
+  <img src="static/img/responsive.jpg" alt="Home-Page wireframe" width="600"/>
 </p>
+
+________________________________
 
 # UX
 ### **Home Page:**
@@ -29,9 +31,9 @@ After the images, a form is provided for the user to book their classes for a sp
 ### **Register Page:**
 - To become a member of ‘Simple Fitness’, each individual will need to register with the company. This page allows users to create a membership by entering a few personal details. Once the details have been recorded, the individual will become a member and begin their journey with ‘Simple Fitness’ gym. 
 This page contains a form containing Subscription Level, Full Name, Email, Home Address, Username and Password. 
+________________________________
 
 #  User Stories
-
 ### **Project Goal:**
 The user's experience was at the front and center during the development of this project. One of the goals of the project was to create an application that is intuitive and satisfying to use. For this reason, 'Simply Fitness' was built to be usable across all screen sizes,
 
@@ -52,11 +54,62 @@ Starting from user stories, some initial wireframes were sketched out, as well a
 - For extra support, the User can also book classes provided by the gym containing different categories, such as boxing, bike, weights and swimming. 
 - Classes booked are visible for the user so they can track when their next class is and also they can edit these classes to change the date and time according to their availability. 
 
+________________________________
+
 # Data Structure and Features
+
 - Working through HTML, CSS and Javascript in my previous projects had taught me how planning and research are key elements in web development. Keeping my main focus on the new language, Python being learnt
 in this project I decided to use [Business Casual template](https://startbootstrap.com/previews/business-casual) from start bootstrap. Keeping the same structure as the template I made changes to create different information, content and pages.
 
     ### **Home Page:**
+    - Home Page consists of two sections, the main image at the top with a small message to motivate the user to join us. Join us button has a feature to navigate the user to the registration page or LogIn page if already registered. 
+    After the hero image home page will lead the user to find the location of the gym which is shown via google maps including a marker to show the exact location. 
+
+    ### **Services Page:**
+    - Service Page contains the services the gym has to offer with images for the user. This page contains the images of the classes and different areas in the gym with a message next to them as a description. 
+    Each description contains a button feature leading the logged-in user to book a class; if not yet logged in then it will lead the user to the login page. 
+
+    ### **Profile Page:** 
+    - Differentiating this page from the previous pages, this page is only visible if the user is registered so the user can access their profile. Profile Page consists of personal details displayed. 
+    User can also view their subscription on this page including an image describing the subscription level. Another feature included on the page is the update button. Which leads the user to the profile editing page. 
+        
+        #### **Edit Profile**:
+        - User is headed to this page once they have chosen to edit the details on the Profile page. This page allows users to edit all their details including subscription level.
+        However, for safety purpose, the user has to confirm the username and password. This page also has two buttons, one is to cancel the changes which lead the user back to the profile page without any amendments. 
+        The second button is to save the changed and once selected the user is shown an appropriate message to confirm the changes. 
+
+    ### **Classes Page:**
+    - Similarly to Profile Page, this is also only visible to a registered user whilst logged in. This page contains 6 images at the top supporting the classes that are available for booking.
+    After the images, the user is provided with two accordion options, both options are closed to start with but expand once selected. 
+        - First option given leads the user onto the Booking a class.
+        This accordion contains a form for the user to submit to book a class which then is stored in a MongoDB collection. The form consists of inputs to gather information, such as 
+        Full Name, Class they want to book, Date and time the booking is for and further text if the user wants to add any details or preference. When submitted, the information about the username is also stored in the collection. 
+
+        - Second Option given in the accordion is for the user to view the booked classes. As the user who created the class is also saved in MongoDB, it helps show classes that are booked by the current user only. 
+        This accordion gets the details from MongoDB collection, to then present to the user, where the user gets two options;
+        whether to edit the booking already made or to delete it if unable to attend. Where the delete button is just to remove the information, the edit button leads the user onto the class editing page. 
+
+        #### **Edit Classes**:
+        - User is lead to this page once they have chosen to edit the details for the class already booked. This page consists of a similar form prefilled with previous booking details where the user can edit them accordingly.
+        Supporting the form, there are two buttons provided for the user to take action. The first button is to cancel the editing, which doesn't save any changes and leads the user back to the booked classes.
+        The second button is to save the changes, which will also be changed in MongoDB, therefore updating the details shown in the booked classes accordion as well. 
+
+    ### **Login Page:** 
+    - This page is only accessible when the user isn't already logged in. Features given on this page are to help the user login.
+    There are two inputs provided for the user on this page, where both the Username and the Password has to be matching the information stored in MongoDB collection otherwise an appropriate message is shown for the user.
+    If the user hasn't yet registered, there is a message displayed containing a link to lead the user to the registration page.
+    Once the user manages to login they are directed to the profile page, which contains a logout button in the navbar for the user to logout once finished using the website for the time being. 
+
+    ### **Registration Page:**
+    - This page is accessible when the user isn't already logged in or isn't already registered. This page consists of a form containing Subscription levels for choice at the start. Subscription levels are provided with radio buttons,
+    so the selected subscription is stored in the MongoDB collection. After the subscription level options, the form contains inputs such as first name, last name, email, address, username, password.
+    All these fields have 'required' attribute so the user must fill in the right information. 
+    Username and Password input has been given RegEx support in the backend to make it more secure, where the user is only allowed to use certain characters and numbers for the username and password inputs. 
+    Once the user has filled in all the details correctly then they can click on the provided button to register, which will show them an appropriate message and lead the user to their profile page. 
+    A message with a link to the login page has also provided for the user who has already registered.
+
+
+________________________________
 
 # Wireframe
 - Wireframes were made at the start of the project to create a specific framework for this website. 
@@ -86,26 +139,37 @@ in this project I decided to use [Business Casual template](https://startbootstr
   <img src="static/img/RegistrationWireframe.png" alt="Registration-Page wireframe" width="600"/>
 </p>
 
+________________________________
 
 
 # Design and Visual Identity
 
+________________________________
 
 # Site Overview
 Following Images are screenshots of the site overview from a desktop: 
 
+________________________________
+
 # Deployment
 
+________________________________
 
 # Code Validation
-# Testing
 
+________________________________
+
+# Testing
 ### Testing Steps(s):
 ### Bug(s) and Resolution(s): 
-
 ### Scalability:
+
+________________________________
 
 # Technologies
 
+________________________________
+
 # Acknowledgement
  
+________________________________

@@ -19,7 +19,11 @@
                 </p>
                 <!--Button to lead user onto register page-->
                 <div class="intro-button mx-auto">
-                    <a class="btn btn-primary btn-xl" href="{{ url_for('register') }}">Join Now</a>
+                    {% if session.user %}
+                        <a class="btn btn-primary btn-xl" href="{{ url_for('profile', username=session['user']) }}">Join Now</a>
+                    {% else %}
+                        <a class="btn btn-primary btn-xl" href="{{ url_for('register') }}">Join Now</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
