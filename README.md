@@ -34,11 +34,6 @@ This page contains a form containing Subscription Level, Full Name, Email, Home 
 ________________________________
 
 #  User Stories
-### **Project Goal:**
-The user's experience was at the front and center during the development of this project. One of the goals of the project was to create an application that is intuitive and satisfying to use. For this reason, 'Simply Fitness' was built to be usable across all screen sizes,
-
-Starting from user stories, some initial wireframes were sketched out, as well as the application's data structure.
-
 ### **User:**
 - As a user, I would like to know what the gym looks like with a location. 
 - As a user, I would like to know what services the gym has to offer. 
