@@ -4,7 +4,7 @@ Additionally, It will allow people to register with the gym thus subsequently be
 This data will be stored in a distinct order to ensure each profile is unique. 
 
 <p align="center">
-  <img src="static/img/responsive.jpg" alt="Home-Page wireframe" width="600"/>
+  <img src="static/img/responsive.jpg" alt="responsive" width="600"/>
 </p>
 
 ________________________________
@@ -56,7 +56,15 @@ Starting from user stories, some initial wireframes were sketched out, as well a
 
 ________________________________
 
-# Data Structure and Features
+# Data Structure, Views and Features
+- Data Structure was pre-planned for this project, so the user can easily register, create, update, view details and delete details. To achieve this [MongoDB](https://www.mongodb.com/) was used, 
+Where I created three collections to store data in them in an organised manner. Where users collection was used to store the database for registered user. 
+Categories collection was used to store all different classes options the user can book. This is used for selecting a class in the process to book a class. 
+Tasks collection was used to store all the details regarding the class that has been booked for the specific user. 
+<p align="center">Collections stored in MongoDB</p>
+<p align="center">
+  <img src="static/img/data-structure.jpg" alt="Collections" width="600"/>
+</p>
 
 - Working through HTML, CSS and Javascript in my previous projects had taught me how planning and research are key elements in web development. Keeping my main focus on the new language, Python being learnt
 in this project I decided to use [Business Casual template](https://startbootstrap.com/previews/business-casual) from start bootstrap. Keeping the same structure as the template I made changes to create different information, content and pages.
@@ -107,7 +115,6 @@ in this project I decided to use [Business Casual template](https://startbootstr
     Username and Password input has been given RegEx support in the backend to make it more secure, where the user is only allowed to use certain characters and numbers for the username and password inputs. 
     Once the user has filled in all the details correctly then they can click on the provided button to register, which will show them an appropriate message and lead the user to their profile page. 
     A message with a link to the login page has also provided for the user who has already registered.
-
 
 ________________________________
 
