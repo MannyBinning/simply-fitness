@@ -52,27 +52,36 @@ Starting from user stories, some initial wireframes were sketched out, as well a
 - For extra support, the User can also book classes provided by the gym containing different categories, such as boxing, bike, weights and swimming. 
 - Classes booked are visible for the user so they can track when their next class is and also they can edit these classes to change the date and time according to their availability. 
 
-# Data Structure
+# Data Structure and Features
+- Working through HTML, CSS and Javascript in my previous projects had taught me how planning and research are key elements in web development. Keeping my main focus on the new language, Python being learnt
+in this project I decided to use [Business Casual template](https://startbootstrap.com/previews/business-casual) from start bootstrap. Keeping the same structure as the template I made changes to create different information, content and pages.
+
+    ### **Home Page:**
 
 # Wireframe
 - Wireframes were made at the start of the project to create a specific framework for this website. 
 ### **Wireframe Screenshots:**
-
+<p align="center">Home Page Wireframe</p>
 <p align="center">
   <img src="static/img/HomeWireframe.png" alt="Home-Page wireframe" width="600"/>
 </p>
+<p align="center">Services Page Wireframe</p>
 <p align="center">
   <img src="static/img/ServicesWireframe.png" alt="Service-Page wireframe" width="600"/>
 </p>
+<p align="center">Profile Page Wireframe</p>
 <p align="center">
   <img src="static/img/ProfileWireframe.png" alt="Profile-Page wireframe" width="600"/>
 </p>
+<p align="center">Classes Page Wireframe</p>
 <p align="center">
   <img src="static/img/ClassesWireframe.png" alt="Classes-Page wireframe" width="600"/>
 </p>
+<p align="center">Login Page Wireframe</p>
 <p align="center">
   <img src="static/img/LogInWireframe.png" alt="LogIn-Page wireframe" width="600"/>
 </p>
+<p align="center">Registration Page Wireframe</p>
 <p align="center">
   <img src="static/img/RegistrationWireframe.png" alt="Registration-Page wireframe" width="600"/>
 </p>
