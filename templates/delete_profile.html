@@ -7,6 +7,7 @@
             <div class="col-xl-9 mx-auto">
                 <div class="cta-inner text-center rounded">
                     <h2 class="section-heading mb-5 section-heading-lower"> Delete Account </h2>
+                    <!--Form to confirm username and password before deleting the account-->
                     <form method="POST" action="{{ url_for('delete_profile', username_id=username._id) }}">
                         <!--Username-->
                         <div class="form-group row">
@@ -22,8 +23,9 @@
                                     maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" placeholder="Confirm Password" required>
                             </div>
                         </div>
+                        <!-- button to cancel deletion-->
                         <a href="{{ url_for('profile', username=session['user']) }}" class="btn btn-warning">Cancel  <i class="fas fa-times"></i></a>
-
+                        <!-- Button to complete deleting the account-->
                         <button type="submit" class="btn btn-warning">Delete Account   <i class="far fa-trash-alt"></i></button>
                     </form>
                 </div>
