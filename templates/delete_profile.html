@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+    
+<section class="page-section cta">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 mx-auto">
+                <div class="cta-inner text-center rounded">
+                    <h2 class="section-heading mb-5 section-heading-lower"> Delete Account </h2>
+                    <form method="POST" action="{{ url_for('delete_profile', username_id=username._id) }}">
+                        <!--Username-->
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <input id="username" name="username" type="text" minlength="5"
+                                    maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" placeholder="Confirm Username" required>
+                            </div>
+                        </div>
+                        <!--Password-->
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <input id="password" name="password" type="password" minlength="5"
+                                    maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" placeholder="Confirm Password" required>
+                            </div>
+                        </div>
+                        <a href="{{ url_for('profile', username=session['user']) }}" class="btn btn-warning">Cancel  <i class="fas fa-times"></i></a>
+
+                        <button type="submit" class="btn btn-warning">Delete Account   <i class="far fa-trash-alt"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>    
+</section>
+
+{% endblock %}

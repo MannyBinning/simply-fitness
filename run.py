@@ -170,6 +170,34 @@ def edit_profile(username_id):
         return render_template("edit_profile.html", user=user, username=username)
 
 
+@app.route("/delete_profile/<username_id>", methods=["GET", "POST"])
+def delete_profile(username_id):
+    if request.method == "POST":
+        existing_user = mongo.db.users.find_one(
+        {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            if check_password_hash(
+                existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                mongo.db.users.remove({"_id": ObjectId(username_id)})
+                flash("Account Deleted")
+                session.pop("user")
+                return redirect(url_for("register"))
+
+            else:
+                # invalid password match
+                flash("Incorrect Username/Password, Update not complete")
+        
+        else:
+            # invalid username
+            flash("Incorrect Username/Password, Update not complete")
+
+    username = mongo.db.users.find_one({"username": session["user"]})
+    return render_template("delete_profile.html", username=username)
+
+
+
 @app.route("/logout")
 def logout():
     flash("You have been logged out")
