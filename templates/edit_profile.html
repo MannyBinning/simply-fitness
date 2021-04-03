@@ -127,8 +127,8 @@
                                     maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" placeholder="Confirm Password" required>
                             </div>
                         </div>
-                        <a href="{{ url_for('profile', username=session['user']) }}" class="btn btn-warning">Cancel</a>
-                        <button type="submit" class="btn btn-warning">Update Subscription</button>
+                        <a href="{{ url_for('profile', username=session['user']) }}" class="btn btn-warning">Cancel  <i class="fas fa-times"></i></a>
+                        <button type="submit" class="btn btn-warning">Save Changes   <i class="far fa-save"></i></button>
                 </form>
                 </div>
             </div>
