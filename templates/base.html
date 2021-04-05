@@ -87,26 +87,6 @@
       <p class="m-0 small">Copyright &copy; Simply Fitness 2021</p>
     </div>
 </footer>
-
-<!-- Bootstrap core JavaScript -->
-    <script>
-      // Initialize and add the map
-      function initMap() {
-        // The location of Uluru
-        const uluru = { lat: 52.4862, lng: -1.8905 };
-        // The map, centered at Uluru
-        const map = new google.maps.Map(document.getElementById("map"), {
-          zoom: 4,
-          center: uluru,
-        });
-        // The marker, positioned at Uluru
-        const marker = new google.maps.Marker({
-          position: uluru,
-          map: map,
-        });
-      }
-    </script>
-
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
     <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
