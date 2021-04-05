@@ -28,7 +28,7 @@
                                                 <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Sauna and Spa access</li><br>
                                             </ul>
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="subscription" id="inlineRadio1" value="Bronze">
+                                                <input class="form-check-input" type="radio" name="subscription" id="inlineRadio1" value="Bronze" required>
                                                 <label class="form-check-label" for="inlineRadio1">Bronze</label>
                                             </div>
                                         </div>
@@ -49,7 +49,7 @@
                                                 <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Sauna and Spa access</li><br>
                                             </ul>
                                             <div class="form-check form-check-inline" >
-                                                <input class="form-check-input" type="radio" name="subscription" id="inlineRadio2" value="Silver">
+                                                <input class="form-check-input" type="radio" name="subscription" id="inlineRadio2" value="Silver" required>
                                                 <label class="form-check-label" for="inlineRadio2">Silver</label>
                                             </div>
                                         </div>
@@ -70,7 +70,7 @@
                                                 <li><span class="fa-li"><i class="fas fa-check"></i></span>Sauna and Spa access</li><br>
                                             </ul>
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="subscription" id="inlineRadio3" value="Gold">
+                                                <input class="form-check-input" type="radio" name="subscription" id="inlineRadio3" value="Gold" required>
                                                 <label class="form-check-label" for="inlineRadio3">Gold </label>
                                             </div>
                                         </div>
@@ -91,7 +91,7 @@
                         <!--Home Address-->
                         <div class="form-group row">
                             <div class="col">
-                                <input type="text" id="address" name="address" class="form-control" placeholder="Home Address" required>
+                                <input type="text" id="address" name="address" class="form-control" placeholder="Home Address" data-toggle="tooltip" data-placement="bottom" title="First Line and Postcode" required>
                             </div>
                         </div>
                         <!--Email Adress -->
@@ -104,14 +104,14 @@
                         <div class="form-group row">
                             <div class="col-sm-12">
                                 <input id="username" name="username" type="text" minlength="5"
-                                    maxlength="15" class="form-control" placeholder="Username" required>
+                                    maxlength="15" class="form-control" placeholder="Username" data-toggle="tooltip" data-placement="bottom" title="Allowed letters, numbers and ._-" required>
                             </div>
                         </div>
                         <!--Password-->
                         <div class="form-group row">
                             <div class="col-sm-12">
                                 <input id="password" name="password" type="password" minlength="5"
-                                    maxlength="15" class="form-control" placeholder="Password" required>
+                                    maxlength="15" class="form-control" placeholder="Password" data-toggle="tooltip" data-placement="bottom" title="Allowed letters and numbers only" required>
                             </div>
                         </div>
                         <!--Register Button-->
