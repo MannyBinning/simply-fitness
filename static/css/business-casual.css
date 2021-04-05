@@ -6,7 +6,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap');
 
-
+/*Body text and background image setting*/
 body {
   font-family: 'Heebo';
   background-image: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../img/bg.jpg");
@@ -15,6 +15,7 @@ body {
   background-size: cover;
 }
 
+/* all headers and paragraphs font*/
 h1,
 h2,
 h3,
@@ -84,6 +85,7 @@ p {
   background-color: rgba(255, 255, 255, 0.85);
 }
 
+/*Navigation*/
 #mainNav {
   background-color: rgba(47, 23, 15, 0.9);
   font-family: 'Heebo';
@@ -273,7 +275,7 @@ p {
   font-weight: 100 !important;
 }
 
- /*Location with Map*/
+ /*Location with Map taken from https://developers.google.com/*/
  #map {
         height: 400px;
         /* The height is 400 pixels */

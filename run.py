@@ -18,31 +18,33 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-
+#Username validation for chosen characters.
 def check_name(name):
-    # Validates users names.
-    # Allow lowercase and uppercase letters and numbers.
-    return re.match("[a-zA-Z0-9]+$", name)
+    # Allow lowercase and uppercase letters 
+    # hyphen, dot, underscore and numbers
+    return re.match("[a-zA-Z0-9.-_ ]+$", name)
 
 
+#Password validation for chosen characters only
 def check_password(password):
-    # Validate users passwords.
     # Allow lowercase and uppercase letters and numbers,
     # 5-15 characters in length.
     return re.match("^[a-zA-Z0-9]{5,15}$", password)
 
 
+#Route to home page
 @app.route("/")
 def index():
     return render_template("index.html")
 
 
+#Route to services page
 @app.route("/services")
 def services():
     return render_template("services.html")
 
 
-# Register Functionality
+# Route to Register page and Register Functionality
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":    
@@ -93,6 +95,7 @@ def register():
     return render_template("register.html")
 
 
+#Route to Login page
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -122,6 +125,7 @@ def login():
     return render_template("login.html")
 
 
+#Route to Profile page
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab the session user's username from db
@@ -134,12 +138,15 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+#Route to edit profile
 @app.route("/edit_profile/<username_id>", methods=["GET", "POST"])
 def edit_profile(username_id):
         if request.method == "POST":
+            #check if username confirmation is correct 
             existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
+            #check if password confirmation is correct
             if existing_user:
                 if check_password_hash(
                     existing_user["password"], request.form.get("password")):
@@ -170,12 +177,15 @@ def edit_profile(username_id):
         return render_template("edit_profile.html", user=user, username=username)
 
 
+#Route to delete the account 
 @app.route("/delete_profile/<username_id>", methods=["GET", "POST"])
 def delete_profile(username_id):
     if request.method == "POST":
+         #check if username confirmation is correct 
         existing_user = mongo.db.users.find_one(
         {"username": request.form.get("username").lower()})
 
+         #check if password confirmation is correct 
         if existing_user:
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
@@ -197,7 +207,7 @@ def delete_profile(username_id):
     return render_template("delete_profile.html", username=username)
 
 
-
+#Route to Logout
 @app.route("/logout")
 def logout():
     flash("You have been logged out")
@@ -205,6 +215,7 @@ def logout():
     return redirect(url_for("login"))
 
 
+#Route to class bookings
 @app.route("/book_class", methods=["GET", "POST"])
 def book_class():
     if request.method == "POST":
@@ -225,6 +236,7 @@ def book_class():
     return render_template("book_class.html", categories=categories, tasks=tasks)
 
 
+#route to edit classes that are already booked
 @app.route("/edit_class/<task_id>", methods=["GET", "POST"])
 def edit_class(task_id):
     if request.method == "POST":
@@ -246,6 +258,7 @@ def edit_class(task_id):
     return render_template("edit_class.html", task=task, categories=categories, tasks=tasks)
 
 
+#route to delete classes that are booked
 @app.route("/delete_class/<task_id>")
 def delete_class(task_id):
     mongo.db.tasks.remove({"_id": ObjectId(task_id)})
