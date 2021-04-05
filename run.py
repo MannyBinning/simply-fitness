@@ -138,11 +138,8 @@ def profile(username):
 @app.route("/edit_profile/<username_id>", methods=["GET", "POST"])
 def edit_profile(username_id):
     if request.method == "POST":
-        # check if username confirmation is correct
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-
-        # check if password confirmation is correct
         if existing_user:
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
@@ -166,11 +163,10 @@ def edit_profile(username_id):
         else:
             # invalid username
             flash("Incorrect Username/Password, Update not complete")
-
-        user = mongo.db.users.find_one({"_id": ObjectId(username_id)})
-        username = mongo.db.users.find_one({"username": session["user"]})
-        return render_template(
-            "edit_profile.html", user=user, username=username)
+    user = mongo.db.users.find_one({"_id": ObjectId(username_id)})
+    username = mongo.db.users.find_one({"username": session["user"]})
+    return render_template(
+        "edit_profile.html", user=user, username=username)
 
 
 # Route to delete the account
