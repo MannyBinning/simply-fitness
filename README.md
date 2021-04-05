@@ -159,11 +159,16 @@ ________________________________
 
 # Code Validation
 
+- Python Validation Tested through [PEP8](http://pep8online.com/) 
+<p align="center">
+  <img src="static/validation/PEP8.jpg" alt="Python Validation" width="600"/>
+</p>
 ________________________________
 
 # Testing
 ### Testing Steps(s):
 ### Bug(s) and Resolution(s): 
+
 ### Scalability:
 - To enhance this website there will be following features added: 
     - Payment's page will be added for the user to make payments in order to register with the gym. 
