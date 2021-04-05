@@ -106,7 +106,7 @@ in this project I decided to use [Business Casual template](https://startbootstr
     ### **Registration Page:**
     - This page is accessible when the user isn't already logged in or isn't already registered. This page consists of a form containing Subscription levels for choice at the start. Subscription levels are provided with radio buttons,
     so the selected subscription is stored in the MongoDB collection. After the subscription level options, the form contains inputs such as first name, last name, email, address, username, password.
-    All these fields have 'required' attribute so the user must fill in the right information. 
+    All these fields have 'required' attribute so the user must fill in the right information. Another feature added on this page is a tool tip so the user knows what characters can be used.
     Username and Password input has been given RegEx support in the backend to make it more secure, where the user is only allowed to use certain characters and numbers for the username and password inputs. 
     Once the user has filled in all the details correctly then they can click on the provided button to register, which will show them an appropriate message and lead the user to their profile page. 
     A message with a link to the login page has also provided for the user who has already registered.
@@ -165,7 +165,11 @@ ________________________________
 ### Testing Steps(s):
 ### Bug(s) and Resolution(s): 
 ### Scalability:
-
+- To enhance this website there will be following features added: 
+    - Payment's page will be added for the user to make payments in order to register with the gym. 
+    - Email confirmation will be added so the user has to confirm their email before they can register. 
+    - I will be adding diet plans for the Gold Subscription users. 
+    - Password change feature will be added so the user can update their password if needed. 
 ________________________________
 
 # Technologies
