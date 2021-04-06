@@ -3,7 +3,6 @@ from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
 import re
-import datetime
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -258,8 +257,14 @@ def delete_class(task_id):
     return redirect(url_for("book_class"))
 
 
+# errorhandling direction
+@app.errorhandler(500)
+def not_found_error(error):
+    return render_template('login.html'), 500
+
+
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP"),
         port=int(os.environ.get("PORT")),
-        debug=True)
+        debug=False)
