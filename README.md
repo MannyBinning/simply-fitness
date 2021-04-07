@@ -67,6 +67,11 @@ in this project I decided to use [Business Casual template](https://startbootstr
     ### **Home Page:**
     - Home Page consists of two sections, the main image at the top with a small message to motivate the user to join us. Join us button has a feature to navigate the user to the registration page or LogIn page if already registered. 
     After the hero image home page will lead the user to find the location of the gym which is shown via google maps including a marker to show the exact location. 
+    <p align="center">Collections stored in MongoDB</p>
+    <p align="center">
+    <img src="static/img/data-structure.jpg" alt="Collections" width="600"/>
+    </p>
+
 
     ### **Services Page:**
     - Service Page contains the services the gym has to offer with images for the user. This page contains the images of the classes and different areas in the gym with a message next to them as a description. 
@@ -74,7 +79,9 @@ in this project I decided to use [Business Casual template](https://startbootstr
 
     ### **Profile Page:** 
     - Differentiating this page from the previous pages, this page is only visible if the user is registered so the user can access their profile. Profile Page consists of personal details displayed. 
-    User can also view their subscription on this page including an image describing the subscription level. Another feature included on the page is the update button. Which leads the user to the profile editing page. 
+    User can also view their subscription on this page including an image describing the subscription level. Another feature included on the page is the update button. Which leads the user to the profile editing page.
+    Once the user has logged in and they decide to share the link, it will give the new user an error as they haven't yet logged in; to resolve this I have added an error handling function so the user to open the
+    the shared link will be directed to the login page instead.  
         
         #### **Edit Profile**:
         - User is headed to this page once they have chosen to edit the details on the Profile page. This page allows users to edit all their details including subscription level.
