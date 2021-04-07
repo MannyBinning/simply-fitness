@@ -67,21 +67,29 @@ in this project I decided to use [Business Casual template](https://startbootstr
     ### **Home Page:**
     - Home Page consists of two sections, the main image at the top with a small message to motivate the user to join us. Join us button has a feature to navigate the user to the registration page or LogIn page if already registered. 
     After the hero image home page will lead the user to find the location of the gym which is shown via google maps including a marker to show the exact location. 
-    <p align="center">Collections stored in MongoDB</p>
+    <p align="center">Home Page Overview</p>
     <p align="center">
-    <img src="static/img/data-structure.jpg" alt="Collections" width="600"/>
+    <img src="static/overview/homepage.jpg" alt="home" width="600"/>
     </p>
 
 
     ### **Services Page:**
     - Service Page contains the services the gym has to offer with images for the user. This page contains the images of the classes and different areas in the gym with a message next to them as a description. 
     Each description contains a button feature leading the logged-in user to book a class; if not yet logged in then it will lead the user to the login page. 
+    <p align="center">Services Page Overview</p>
+    <p align="center">
+    <img src="static/overview/servicespage.jpg" alt="services" width="600"/>
+    </p>
 
     ### **Profile Page:** 
     - Differentiating this page from the previous pages, this page is only visible if the user is registered so the user can access their profile. Profile Page consists of personal details displayed. 
     User can also view their subscription on this page including an image describing the subscription level. Another feature included on the page is the update button. Which leads the user to the profile editing page.
     Once the user has logged in and they decide to share the link, it will give the new user an error as they haven't yet logged in; to resolve this I have added an error handling function so the user to open the
-    the shared link will be directed to the login page instead.  
+    the shared link will be directed to the login page instead. 
+        <p align="center">Profile Page Overview</p>
+        <p align="center">
+        <img src="static/overview/profilepage.jpg" alt="profile" width="600"/>
+        </p> 
         
         #### **Edit Profile**:
         - User is headed to this page once they have chosen to edit the details on the Profile page. This page allows users to edit all their details including subscription level.
@@ -98,6 +106,10 @@ in this project I decided to use [Business Casual template](https://startbootstr
         - Second Option given in the accordion is for the user to view the booked classes. As the user who created the class is also saved in MongoDB, it helps show classes that are booked by the current user only. 
         This accordion gets the details from MongoDB collection, to then present to the user, where the user gets two options;
         whether to edit the booking already made or to delete it if unable to attend. Where the delete button is just to remove the information, the edit button leads the user onto the class editing page. 
+        <p align="center">Classes Page Overview</p>
+        <p align="center">
+        <img src="static/overview/classespage.jpg" alt="classes" width="600"/>
+        </p>
 
         #### **Edit Classes**:
         - User is lead to this page once they have chosen to edit the details for the class already booked. This page consists of a similar form prefilled with previous booking details where the user can edit them accordingly.
@@ -109,6 +121,10 @@ in this project I decided to use [Business Casual template](https://startbootstr
     There are two inputs provided for the user on this page, where both the Username and the Password has to be matching the information stored in MongoDB collection otherwise an appropriate message is shown for the user.
     If the user hasn't yet registered, there is a message displayed containing a link to lead the user to the registration page.
     Once the user manages to login they are directed to the profile page, which contains a logout button in the navbar for the user to logout once finished using the website for the time being. 
+    <p align="center">LogIn Page Overview</p>
+    <p align="center">
+    <img src="static/overview/loginpage.jpg" alt="LogIn" width="600"/>
+    </p>
 
     ### **Registration Page:**
     - This page is accessible when the user isn't already logged in or isn't already registered. This page consists of a form containing Subscription levels for choice at the start. Subscription levels are provided with radio buttons,
@@ -117,6 +133,10 @@ in this project I decided to use [Business Casual template](https://startbootstr
     Username and Password input has been given RegEx support in the backend to make it more secure, where the user is only allowed to use certain characters and numbers for the username and password inputs. 
     Once the user has filled in all the details correctly then they can click on the provided button to register, which will show them an appropriate message and lead the user to their profile page. 
     A message with a link to the login page has also provided for the user who has already registered.
+    <p align="center">Register Page Overview</p>
+    <p align="center">
+    <img src="static/overview/registerpage.jpg" alt="Register" width="600"/>
+    </p>
 
 ________________________________
 
