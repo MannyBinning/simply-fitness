@@ -1,5 +1,5 @@
 # Description  
-- ‘Simple Fitness’ is a fictional gym created for this project. The main objective for creating this website is to make the general public aware of key features within the gym whilst motiving clients to better their fitness regime. 
+- [SimplyFitness](https://simply-fitness.herokuapp.com/) is a fictional gym created for this project. The main objective for creating this website is to make the general public aware of key features within the gym whilst motiving clients to better their fitness regime. 
 Additionally, It will allow people to register with the gym thus subsequently become a member of the ‘Simple Fitness’ company. Once becoming a member, users can gain access to their profiles which will contain key personal details. 
 This data will be stored in a distinct order to ensure each profile is unique. 
 
@@ -170,18 +170,56 @@ ________________________________
 
 ________________________________
 
-
-# Design and Visual Identity
-
-________________________________
-
-# Site Overview
-Following Images are screenshots of the site overview from a desktop: 
-
-________________________________
-
 # Deployment
 
+To deploy [SimplyFitness](https://simply-fitness.herokuapp.com/) please follow the following steps: 
+
+1. Getting Started: You will have to go on GitHub [repository](https://github.com/MannyBinning/simply-fitness) and click on the "code" button:
+
+2. Installing modules: Once loaded, inside the terminal install the modules required for this application using pip, -m and requirements.txt.
+
+3. Setting up Database: Using [MongoDB](https://www.mongodb.com/), create 3 collections named, categories, tasks and users in simply_fitness database. 
+
+4. Store the data: Create a file called env.py containing the following code:
+
+    ```
+    import os
+
+    os.environ.setdefault("IP", "0.0.0.0")
+    os.environ.setdefault("PORT", "5000")
+    os.environ.setdefault("SECRET_KEY", "your_secret_key_here")
+    os.environ.setdefault("MONGO_URI", "your_own_uri")
+    os.environ.setdefault("MONGO_DBNAME", "your_own_file_name")
+
+    ```
+
+    All the above information can be collected from the Overview tab within the MongoDB cluster dashboard. Once clicked on Connect and then in the modal, click the Connect your application button, where the driver needs to be 'Python' and application code will be given. 
+
+5. Confidentiality: As env.py contains sensible information it will be stored in .gitignore to prevent it from getting pushed to git hub. 
+
+6. Ready: After the above steps are completed, you can now use python3 run.py to get the application running in your local browser. 
+
+### Deployment to Heroku
+
+To deploy [SimplyFitness](https://simply-fitness.herokuapp.com/) please follow the following steps: 
+
+1. Heroku needs to be aware of the dependencies the application has and to achieve that, the requirements.txt file needs to be created containing the list of the dependencies. For this, the command pip3 freeze –local > requirements.txt can be used.
+
+2. Heroku needs to know all the files that run the app and to ensure that Procfile needs to be installed. 
+
+3. Login at [Heroku](https://dashboard.heroku.com/apps), create a new app. 
+
+4. On the deploy screen, select GitHub in the deployment section and select your app from the options of your GitHub repositories. 
+
+5. Within settings sections create config vars, these are the same as environment variables in env.py file. These are used here as they cant be found on the GitHub page so will need to be set up on Heroku to get the application working.
+
+6. Automatic Deployment will need to be enabled on the settings page so that Heroku runs the most recent update. 
+
+7. Finally, the master branch will need to be deployed and the link will be received to run SIMPLY FITNESS. https://simply-fitness.herokuapp.com/
+
+<p align="center">
+  <img src="static/validation/deployment.jpg" alt="Python Validation" width="600"/>
+</p>
 ________________________________
 
 # Code Validation
