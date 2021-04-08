@@ -21,7 +21,6 @@
                                         <!--Dropdown menu with previous class selected-->
                                         <div class="form-group">    
                                             <select class="form-control" id="category_name" name="category_name" required>
-                                                <option disabled>Select a Class</option>
                                                 {% for category in categories %}
                                                     {% if category.category_name == task.category_name %}   
                                                         <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>

@@ -233,7 +233,7 @@ ________________________________
 # Testing
 ### Testing Steps(s):
 ### Bug(s) and Resolution(s): 
-
+- 
 ### Scalability:
 - To enhance this website there will be following features added: 
     - Payment's page will be added for the user to make payments in order to register with the gym. 
@@ -242,10 +242,31 @@ ________________________________
     - Password change feature will be added so the user can update their password if needed. 
 ________________________________
 
-# Technologies
+# Technologies and Tools used
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+- [CSS3](https://en.wikipedia.org/wiki/CSS)
+- [JavaScript](https://en.wikipedia.org/wiki/JQuery) / [JQuery](https://en.wikipedia.org/wiki/JavaScript)
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+- [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework)) / [RegEx](https://en.wikipedia.org/wiki/Regular_expression)
+- [Bootstrap4](https://getbootstrap.com/) was used to organise the content in a grid format. 
+- [Balsmiq](https://balsamiq.com/) was used to create the wireframes.
+- [Google Font](https://fonts.google.com/)  was used all through the website for font.
+- [Font Awesome](https://fontawesome.com/) was used for the icons used for the website. 
+- [TinyPNG](https://tinypng.com/) was used to compress the images without making any changes to the size. 
+- [GTmetrix](https://gtmetrix.com/) was used to test the speed of the website. 
+- [StartBootstrap](https://startbootstrap.com/) to get the design of the application.
+- [MongoDB](https://www.mongodb.com/) was used for data storage. 
+- [Heroku](https://dashboard.heroku.com/apps) / [GitHub](https://github.com/) for deployment. 
+- [RandomKeyGen](https://randomkeygen.com/) to generate random keys. 
+- [GoogleMaps](https://developers.google.com/maps/documentation/javascript/adding-a-google-map) was used for the location section.
 
 ________________________________
 
 # Acknowledgement
- 
+
+- I would like to thank code institute, for all the help and support provided through the modules, tutor assitance and many other ways of assistance. 
+Felipe, my mentor, has once again been a great help for guiding me to the correct path, supporting me at every step of this journey and for rescuing me from any unwanted situation. 
+I would like to thank all the tutors from tutor support, who helped me resolve the issues I had by guiding me towards the solution. 
+Also, technologies I have used, such as [StartBootstrap](https://startbootstrap.com/), [w3School](https://www.w3schools.com/) and [Slack](https://slack.com/intl/en-gb/) to help me achieve the final version of this site.
+
 ________________________________
