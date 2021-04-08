@@ -141,6 +141,7 @@ in this project I decided to use [Business Casual template](https://startbootstr
 ________________________________
 
 # Wireframe
+
 - Wireframes were made at the start of the project to create a specific framework for this website. 
 ### **Wireframe Screenshots:**
 <p align="center">Home Page Wireframe</p>
@@ -231,7 +232,24 @@ ________________________________
 ________________________________
 
 # Testing
+
 ### Testing Steps(s):
+
+Following steps demonstrate how all the steps work in the application and how languages have been paired for functionality purpose.
+- Base template has been created which contains a header and footer for all the pages and has been linked to all the pages where the main content is extended.
+- All the links in the Navbar lead to the pages required and are connected through the route methods in python. 
+- Once on HomePage, the Join button has been added to head the users to the Register or Profile Page. 
+- Services page has been given Booking buttons to lead the user onto class bookings. 
+- Profile page has been given update functionality and deletes functionality routed from python. Information from MongoDB is requested to show the details and an update button is created for the user to update those details. 
+- Once clicked on the update button, the user is directed to the update profile page where they can refill the registration form and can submit the form again. Immediately information in MongoDB is updated, which then updates the information on the Profile page. 
+- Another button named Delete Account has been added to remove all the information related to that user and will lead the user to the registration page deleting their profile. 
+- Book Class paged has also been given two different functionalities, First One containing a form for the user to book their chosen class. This form contains a calendar where the user can only select the future dates for booking. In the form, there is a select section where the categories are requested from MongoDB. 
+- Second Section is for the user to view the booked classes where the Details are requested from MongoDB and two buttons are given for each booking. 
+  - First Button is to edit the details where the user is taken to another page called edit class. This page contains the same form as book class but with pre-filled inputs. Once submitted the details are changed in MongoDB also updating the bookings page. 
+  - Second button is created to remove the classes created by that user, where the details are removed from MongoDB resulting in a class deletion on the profile page as well. 
+- Log in and LogOut button has been given functionality to check the details with MongoDB to confirm entered details are correct and acted accordingly. 
+- Register page has been added with a form and a submit button where the user is asked to fill in the form and submit it. Information submitted is then stored in MongoDB. 
+
 ### Bug(s) and Resolution(s): 
 - 
 ### Scalability:
@@ -243,6 +261,7 @@ ________________________________
 ________________________________
 
 # Technologies and Tools used
+
 - [HTML5](https://en.wikipedia.org/wiki/HTML5)
 - [CSS3](https://en.wikipedia.org/wiki/CSS)
 - [JavaScript](https://en.wikipedia.org/wiki/JQuery) / [JQuery](https://en.wikipedia.org/wiki/JavaScript)
