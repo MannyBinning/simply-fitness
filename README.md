@@ -252,10 +252,26 @@ Following steps demonstrate how all the steps work in the application and how la
 
 ### Bug(s) and Resolution(s): 
 - Bugs are a huge contribution towards learning, same in this profession every bug occurs teaches you a lesson on how you may face problems and ways to find those solutions to overcome these problems. I faced a few problems during this journey listed as following including their resolution source: 
-  - First of all, trying to retrieve the information from MongoDB onto the profile page I was failing to do so and the result I was getting wasn't the one expected. Asking for tutor support I managed to find the solution. The main reason for the unwanted result was that I was requesting the full collection at once where I should have been targetting each item at a time, such as "{{username.FirtName}}" to receive the first name. 
-  - The second issue faced was when booking a class, when receiving information from MongoDB, I wanted to receive the classes booked by that particular user only. Once again, tutor assistance helped me achieve this, where I stored another document in MongoDB named 'created_by' where the user who created the class will be stored and when asking for the classes it will only show the ones that are created by that user. 
-  - Another issue faced was with deleting the account, where the functionality wasn't working at all and when clicking the delete button page was just refreshing, this issue was resolved after giving a very simple submit type to the submit button. 
-  - When user not logged in and clicks on someone else's profile, it was sending them straight to an error page. To redirect the user to the login page I used error handling suggested by my mentor Felipe. Where the user will be redirected to the login page when error 500 is given. 
+  - First of all, trying to retrieve the information from MongoDB onto the profile page I was failing to do so and the result I was getting wasn't the one expected. 
+      - Result expected was to show each item in the section like Username, Full Name, etc. 
+      - However, I was receiving the password as well and the details shown were not organised. 
+      - Steps taken towards the solution was research and tutor support, The main reason for the unwanted result was that I was requesting the full collection at once.
+      - Resolution for this issue was to target each item at a time, such as "{{username.FirtName}}" to receive the first name. 
+  
+  - The second issue faced was when booking a class when receiving information from MongoDB. 
+      - Result expected was to receive the classes booked by that particular user only. 
+      - Result I was getting was different as all the classes were shown even the ones created by different users.
+      - Steps taken to resolve this issue was to create another document in MongoDB named 'created_by' where the user who creates the class will be stored. Therefore, I could request to show the classes booked only where the current user is equal to the class creator. 
+    
+  - Another issue I was facing was with the delete functionality.
+    - Result expected was to delete the account including all the details for that account. 
+    - However, I was getting was just a refreshed page, where all cancel button was working perfectly fine. 
+    - Reason behind this issue was a straight forward one as I just had to give submit type to the submit button for the functionality to work. 
+  
+  - Another issue faced was with the Error 500. 
+    - Result expected was for the user to not receive any error pages.
+    - However, when the user who isn't logged in, clicks on someone else's profile, it was sending them straight to an error page. 
+    - To redirect the user to the login page I used the error handling route in python suggested by my mentor Felipe. Where the user will be redirected to the login page when error 500 is given. 
 
 ### Scalability:
 - To enhance this website there will be following features added: 
