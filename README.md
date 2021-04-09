@@ -129,7 +129,7 @@ in this project I decided to use [Business Casual template](https://startbootstr
     ### **Registration Page:**
     - This page is accessible when the user isn't already logged in or isn't already registered. This page consists of a form containing Subscription levels for choice at the start. Subscription levels are provided with radio buttons,
     so the selected subscription is stored in the MongoDB collection. After the subscription level options, the form contains inputs such as first name, last name, email, address, username, password.
-    All these fields have 'required' attribute so the user must fill in the right information. Another feature added on this page is a tool tip so the user knows what characters can be used.
+    All these fields have a 'required' attribute so the user must fill in the right information. Another feature added on this page is a tooltip so the user knows what characters can be used.
     Username and Password input has been given RegEx support in the backend to make it more secure, where the user is only allowed to use certain characters and numbers for the username and password inputs. 
     Once the user has filled in all the details correctly then they can click on the provided button to register, which will show them an appropriate message and lead the user to their profile page. 
     A message with a link to the login page has also provided for the user who has already registered.
@@ -251,7 +251,12 @@ Following steps demonstrate how all the steps work in the application and how la
 - Register page has been added with a form and a submit button where the user is asked to fill in the form and submit it. Information submitted is then stored in MongoDB. 
 
 ### Bug(s) and Resolution(s): 
-- 
+- Bugs are a huge contribution towards learning, same in this profession every bug occurs teaches you a lesson on how you may face problems and ways to find those solutions to overcome these problems. I faced a few problems during this journey listed as following including their resolution source: 
+  - First of all, trying to retrieve the information from MongoDB onto the profile page I was failing to do so and the result I was getting wasn't the one expected. Asking for tutor support I managed to find the solution. The main reason for the unwanted result was that I was requesting the full collection at once where I should have been targetting each item at a time, such as "{{username.FirtName}}" to receive the first name. 
+  - The second issue faced was when booking a class, when receiving information from MongoDB, I wanted to receive the classes booked by that particular user only. Once again, tutor assistance helped me achieve this, where I stored another document in MongoDB named 'created_by' where the user who created the class will be stored and when asking for the classes it will only show the ones that are created by that user. 
+  - Another issue faced was with deleting the account, where the functionality wasn't working at all and when clicking the delete button page was just refreshing, this issue was resolved after giving a very simple submit type to the submit button. 
+  - When user not logged in and clicks on someone else's profile, it was sending them straight to an error page. To redirect the user to the login page I used error handling suggested by my mentor Felipe. Where the user will be redirected to the login page when error 500 is given. 
+
 ### Scalability:
 - To enhance this website there will be following features added: 
     - Payment's page will be added for the user to make payments in order to register with the gym. 
@@ -283,7 +288,7 @@ ________________________________
 
 # Acknowledgement
 
-- I would like to thank code institute, for all the help and support provided through the modules, tutor assitance and many other ways of assistance. 
+I would like to thank code institute, for all the help and support provided through the modules, tutor assistance and many other ways of assistance. 
 Felipe, my mentor, has once again been a great help for guiding me to the correct path, supporting me at every step of this journey and for rescuing me from any unwanted situation. 
 I would like to thank all the tutors from tutor support, who helped me resolve the issues I had by guiding me towards the solution. 
 Also, technologies I have used, such as [StartBootstrap](https://startbootstrap.com/), [w3School](https://www.w3schools.com/) and [Slack](https://slack.com/intl/en-gb/) to help me achieve the final version of this site.
