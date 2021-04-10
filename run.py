@@ -263,6 +263,12 @@ def not_found_error(error):
     return render_template('login.html'), 500
 
 
+# errorhandling direction
+@app.errorhandler(404)
+def not_found_error404(error):
+    return render_template('login.html'), 404
+
+
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP"),
