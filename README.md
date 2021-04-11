@@ -299,6 +299,8 @@ ________________________________
 - [Heroku](https://dashboard.heroku.com/apps) / [GitHub](https://github.com/) for deployment. 
 - [RandomKeyGen](https://randomkeygen.com/) to generate random keys. 
 - [GoogleMaps](https://developers.google.com/maps/documentation/javascript/adding-a-google-map) was used for the location section.
+- [DavidLloyd](https://www.davidlloyd.co.uk/) to get content and ideas for this website. 
+- [FaviconGenerator](https://favicon.io/favicon-generator/)to design the favicon made for this website. 
 
 ________________________________
 

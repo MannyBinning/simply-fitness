@@ -209,17 +209,17 @@ def logout():
 @app.route("/book_class", methods=["GET", "POST"])
 def book_class():
     if request.method == "POST":
-            task = {
-                "category_name": request.form.get("category_name"),
-                "booking_name": request.form.get("booking_name"),
-                "booking_date": request.form.get("booking_date"),
-                "booking_time": request.form.get("booking_time"),
-                "booking_notes": request.form.get("booking_notes"),
-                "created_by": session["user"]
-            }
-            mongo.db.tasks.insert_one(task)
-            flash("Class Booked")
-            return redirect(url_for("book_class"))
+        task = {
+            "category_name": request.form.get("category_name"),
+            "booking_name": request.form.get("booking_name"),
+            "booking_date": request.form.get("booking_date"),
+            "booking_time": request.form.get("booking_time"),
+            "booking_notes": request.form.get("booking_notes"),
+            "created_by": session["user"]
+        }
+        mongo.db.tasks.insert_one(task)
+        flash("Class Booked")
+        return redirect(url_for("book_class"))
     categories = mongo.db.categories.find().sort("category_name", 1)
     tasks = mongo.db.tasks.find()
     return render_template(
