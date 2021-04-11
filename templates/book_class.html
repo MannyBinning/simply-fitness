@@ -64,6 +64,7 @@
                                         <!--Dropdown to select a class category-->
                                         <div class="form-group">    
                                             <select class="form-control" id="category_name" name="category_name" required>
+                                                <option value="" disabled selected>Select a Class</option>
                                                 {% for category in categories %}
                                                     <option value="{{ category.category_name }}">{{ category.category_name }}</option >
                                                 {% endfor %}
@@ -78,7 +79,7 @@
                                         <div class="form-group">
                                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Further Information" name="booking_notes"></textarea>
                                         </div>
-                                        <button type="submit" class="btn btn-secondary">Book</button>
+                                        <button onclick="GetSelected ();" type="submit" class="btn btn-secondary">Book</button>
                                     </form>                                
                                 </div>
                             </div>
@@ -123,7 +124,6 @@
         </div>
     </div>
 </section>
-
 <script src="{{ url_for('static', filename='vendor/bootstrap/js/calendar.js') }}"></script>
 
 {% endblock %}
