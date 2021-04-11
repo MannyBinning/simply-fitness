@@ -243,6 +243,12 @@ ________________________________
 <p align="center">
   <img src="static/validation/Registervalidation.jpg" alt="Registration Validation" width="600"/>
 </p>
+<p align="center">
+  <img src="static/validation/Bookclass.jpg" alt="Book Class Validation" width="600"/>
+</p>
+<p align="center">
+  <img src="static/validation/Editclass.jpg" alt="Edit Class Validation" width="600"/>
+</p>
 
 ________________________________
 
