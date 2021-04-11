@@ -64,6 +64,7 @@
                                         <!--Dropdown to select a class category-->
                                         <div class="form-group">    
                                             <select class="form-control" id="category_name" name="category_name" required>
+                                                <option disabled selected>Select a Class</option>
                                                 {% for category in categories %}
                                                     <option value="{{ category.category_name }}">{{ category.category_name }}</option >
                                                 {% endfor %}

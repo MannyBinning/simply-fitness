@@ -8,51 +8,44 @@
             <div class="col-xl-9 mx-auto">
                 <div class="cta-inner text-center rounded">
                     <h2 class="section-heading mb-5 section-heading-lower"> Edit Classes </h2>
-                    <div id="accordion">
-                        <div class="card">
-                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                                <div class="card-body">
-                                    <!--Form to edit details-->
-                                    <form method="POST" action="{{ url_for('edit_class', task_id=task._id) }}">
-                                        <!--Name Input-->
-                                        <div class="form-group">
-                                            <input value="{{ task.booking_name }}" type="text" class="form-control" id="exampleFormControlInput1" name= "booking_name" placeholder="Full Name">
-                                        </div>
-                                        <!--Dropdown menu with previous class selected-->
-                                        <div class="form-group">    
-                                            <select class="form-control" id="category_name" name="category_name" required>
-                                                {% for category in categories %}
-                                                    {% if category.category_name == task.category_name %}   
-                                                        <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
-                                                    {% else %}   
-                                                        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                                                    {% endif %}        
-                                                {% endfor %}
-                                            </select>
-                                        </div>
-                                        <!--Calendar to change booking date and time-->
-                                        <div class="form-group" >
-                                            <input value="{{ task.booking_date }}" type="date" id="date" name="booking_date" required>
-                                            <input value="{{ task.booking_time }}" type="time" id="time" name="booking_time" required>  
-                                        </div>
-                                        <!--Text area to update further information -->
-                                        <div class="form-group">
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Further Information" name="booking_notes">{{ task.booking_notes }}</textarea>
-                                        </div>
-
-                                        <!--Button to cancel the changes-->
-                                        <a href="{{ url_for('book_class')}}" class="btn btn-warning">Cancel  <i class="fas fa-times"></i></a>
-                                        <!--Button to save changes-->
-                                        <button type="submit" class="btn btn-warning">Save Changes   <i class="far fa-save"></i></button>
-                                    </form>                                
-                                </div>
-                            </div>
+                <!--Form to edit details-->
+                    <form method="POST" action="{{ url_for('edit_class', task_id=task._id) }}">
+                        <!--Name Input-->
+                        <div class="form-group">
+                            <input value="{{ task.booking_name }}" type="text" class="form-control" id="exampleFormControlInput1" name= "booking_name" placeholder="Full Name">
                         </div>
-                    </div>
+                        <!--Dropdown menu with previous class selected-->
+                        <div class="form-group">    
+                            <select class="form-control" id="category_name" name="category_name" required>
+                                {% for category in categories %}
+                                    {% if category.category_name == task.category_name %}   
+                                        <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                                    {% else %}   
+                                        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                                    {% endif %}        
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <!--Calendar to change booking date and time-->
+                        <div class="form-group" >
+                            <input value="{{ task.booking_date }}" type="date" id="date" name="booking_date" required>
+                            <input value="{{ task.booking_time }}" type="time" id="time" name="booking_time" required>  
+                        </div>
+                        <!--Text area to update further information -->
+                        <div class="form-group">
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Further Information" name="booking_notes">{{ task.booking_notes }}</textarea>
+                        </div>
+
+                        <!--Button to cancel the changes-->
+                        <a href="{{ url_for('book_class')}}" class="btn btn-warning">Cancel  <i class="fas fa-times"></i></a>
+                        <!--Button to save changes-->
+                        <button type="submit" class="btn btn-warning">Save Changes   <i class="far fa-save"></i></button>
+                    </form>                                
                 </div>
             </div>
         </div>
     </div>
+                
     
 </section>
 
