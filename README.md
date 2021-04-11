@@ -231,21 +231,27 @@ ________________________________
 </p>
 
 - HTML Validation Tested through [W3C](https://validator.w3.org/#validate_by_uri)
+<p align="center">Home Page Validation</p>
 <p align="center">
   <img src="static/validation/Homevalidation.jpg" alt="Python Validation" width="600"/>
 </p>
+<p align="center">Services Validation</p>
 <p align="center">
   <img src="static/validation/Servicesvalidation.jpg" alt="Services Validation" width="600"/>
 </p>
+<p align="center">Login Validation</p>
 <p align="center">
   <img src="static/validation/Loginvalidation.jpg" alt="Login Validation" width="600"/>
 </p>
+<p align="center">RegistrationValidation</p>
 <p align="center">
   <img src="static/validation/Registervalidation.jpg" alt="Registration Validation" width="600"/>
 </p>
+<p align="center">Book Class Validation</p>
 <p align="center">
   <img src="static/validation/Bookclass.jpg" alt="Book Class Validation" width="600"/>
 </p>
+<p align="center">Edit Class Page Validation</p>
 <p align="center">
   <img src="static/validation/Editclass.jpg" alt="Edit Class Validation" width="600"/>
 </p>
@@ -319,7 +325,6 @@ ________________________________
 - [Google Font](https://fonts.google.com/)  was used all through the website for font.
 - [Font Awesome](https://fontawesome.com/) was used for the icons used for the website. 
 - [TinyPNG](https://tinypng.com/) was used to compress the images without making any changes to the size. 
-- [GTmetrix](https://gtmetrix.com/) was used to test the speed of the website. 
 - [StartBootstrap](https://startbootstrap.com/) to get the design of the application.
 - [MongoDB](https://www.mongodb.com/) was used for data storage. 
 - [Heroku](https://dashboard.heroku.com/apps) / [GitHub](https://github.com/) for deployment. 
