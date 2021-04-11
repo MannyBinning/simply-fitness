@@ -256,6 +256,10 @@ ________________________________
   <img src="static/validation/Editclass.jpg" alt="Edit Class Validation" width="600"/>
 </p>
 
+- CSS Validation tested throught [W3C CSS](https://jigsaw.w3.org/css-validator/validator)
+<p align="center">
+  <img src="static/validation/CSS.jpg" alt="CSS Validation" width="600"/>
+</p>
 ________________________________
 
 # Testing
