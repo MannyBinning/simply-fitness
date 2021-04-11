@@ -229,6 +229,21 @@ ________________________________
 <p align="center">
   <img src="static/validation/PEP8.jpg" alt="Python Validation" width="600"/>
 </p>
+
+- HTML Validation Tested through [W3C](https://validator.w3.org/#validate_by_uri)
+<p align="center">
+  <img src="static/validation/Homevalidation.jpg" alt="Python Validation" width="600"/>
+</p>
+<p align="center">
+  <img src="static/validation/Servicesvalidation.jpg" alt="Services Validation" width="600"/>
+</p>
+<p align="center">
+  <img src="static/validation/Loginvalidation.jpg" alt="Login Validation" width="600"/>
+</p>
+<p align="center">
+  <img src="static/validation/Registervalidation.jpg" alt="Registration Validation" width="600"/>
+</p>
+
 ________________________________
 
 # Testing
