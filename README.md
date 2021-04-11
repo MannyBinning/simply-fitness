@@ -294,6 +294,11 @@ Following steps demonstrate how all the steps work in the application and how la
     - However, when the user who isn't logged in, clicks on someone else's profile, it was sending them straight to an error page. 
     - To redirect the user to the login page I used the error handling route in python suggested by my mentor Felipe. Where the user will be redirected to the login page when error 500 is given. 
 
+  - Another issue faced was the form submission on book classes page. 
+    - I wanted to make the Select option a requirements for the user where they must select one class.
+    - Submission was allowing the user to book the class and value of 'none' was appearing in the booked classes.
+    - To fix this issue I had to add an value to the first option and required attribute in select option for it to work. 
+
 ### Scalability:
 - To enhance this website there will be following features added: 
     - Payment's page will be added for the user to make payments in order to register with the gym. 
